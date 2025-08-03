@@ -50,9 +50,9 @@ class PortfolioApplication implements PortfolioApp {
       this.initResumeDownload();
       this.handleInitialState();
       
-      console.info('Portfolio application initialized successfully');
+      // Portfolio application initialized successfully
     } catch (error) {
-      console.error('Failed to initialize portfolio application:', error);
+      // Failed to initialize portfolio application
     }
   }
 
@@ -320,7 +320,7 @@ class PortfolioApplication implements PortfolioApp {
    */
   private throttle(func: Function, limit: number): Function {
     let inThrottle: boolean;
-    return function(this: any) {
+    return function() {
       if (!inThrottle) {
         func.apply(this, arguments);
         inThrottle = true;
@@ -349,7 +349,7 @@ class PortfolioApplication implements PortfolioApp {
       });
     }
 
-    console.info('Portfolio application destroyed');
+    // Portfolio application destroyed
   }
 
   /**
@@ -484,7 +484,7 @@ class PortfolioApplication implements PortfolioApp {
         loadingDiv.style.display = 'none';
         errorDiv.style.display = 'block';
         errorDiv.textContent = 'Download tracking failed. Please try again.';
-        console.error('Resume download tracking error:', error);
+        // Resume download tracking error
       } finally {
         confirmDownloadBtn.removeAttribute('disabled');
       }
