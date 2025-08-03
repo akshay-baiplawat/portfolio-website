@@ -1,7 +1,7 @@
 module.exports = {
     ci: {
         collect: {
-            url: ['https://akshay-baiplawat.github.io/portfolio-website/'],
+            url: ['https://akshay-baiplawat.github.io/portfolio-website/']
             // Remove local server commands since we're testing the live GitHub Pages site
         },
         assert: {
