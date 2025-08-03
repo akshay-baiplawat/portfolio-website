@@ -61,14 +61,14 @@ describe('PortfolioApplication', () => {
         it('should find mobile navigation elements', () => {
             const toggleBtn = document.querySelector('.mobile-nav-toggle');
             const navLinks = document.querySelectorAll('#navmenu a');
-            
+
             expect(toggleBtn).toBeTruthy();
             expect(navLinks.length).toBeGreaterThan(0);
         });
 
         it('should handle mobile nav events without errors', () => {
             const toggleBtn = document.querySelector('.mobile-nav-toggle') as HTMLElement;
-            
+
             expect(() => {
                 toggleBtn.click();
             }).not.toThrow();
