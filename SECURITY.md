@@ -16,30 +16,33 @@ If you discover a security vulnerability, please follow these steps:
 1. **DO NOT** open a public issue or pull request
 2. Email security details to: akshay.baiplawat@example.com
 3. Include the following information:
-   - Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting)
-   - Full paths of source file(s) related to the manifestation of the issue
-   - Location of the affected source code (tag/branch/commit)
-   - Special configuration required to reproduce the issue
-   - Step-by-step instructions to reproduce the issue
-   - Proof-of-concept or exploit code (if possible)
-   - Impact of the issue
+    - Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting)
+    - Full paths of source file(s) related to the manifestation of the issue
+    - Location of the affected source code (tag/branch/commit)
+    - Special configuration required to reproduce the issue
+    - Step-by-step instructions to reproduce the issue
+    - Proof-of-concept or exploit code (if possible)
+    - Impact of the issue
 
 ## Security Measures
 
 This project implements the following security measures:
 
 ### Development Security
+
 - **ESLint Security Plugin**: Scans for common security anti-patterns
 - **Dependency Scanning**: Regular `npm audit` checks for known vulnerabilities
 - **TypeScript**: Strict type checking prevents many runtime errors
 - **Content Security Policy**: Implemented to prevent XSS attacks
 
 ### Build Security
+
 - **Automated Vulnerability Scanning**: Trivy scans during CI/CD
 - **Dependency Pinning**: Exact version pinning for reproducible builds
 - **Secure Secrets Management**: No hardcoded secrets in repository
 
 ### Runtime Security
+
 - **HTTPS Only**: Force secure connections in production
 - **Security Headers**: Implement security headers via web server configuration
 - **Input Validation**: All user inputs are validated and sanitized

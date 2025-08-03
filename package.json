@@ -1,107 +1,107 @@
 {
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "A modern, responsive portfolio website built with HTML, CSS, and JavaScript",
-  "main": "index.html",
-  "scripts": {
-    "dev": "vite",
-    "start": "npm run dev",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext .ts,.js --fix",
-    "lint:check": "eslint src --ext .ts,.js",
-    "format": "prettier --write \"src/**/*.{ts,js,css,html}\" \"*.{ts,js,json,md}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,js,css,html}\" \"*.{ts,js,json,md}\"",
-    "type-check": "tsc --noEmit",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
-    "test:run": "vitest run",
-    "validate": "html-validate index.html",
-    "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./reports/lighthouse-report.html",
-    "deploy": "npm run build && gh-pages -d dist",
-    "clean": "rimraf dist reports coverage",
-    "security:audit": "npm audit",
-    "security:fix": "npm audit fix",
-    "analyze": "npm run build && npx vite-bundle-analyzer dist",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
-  },
-  "keywords": [
-    "portfolio",
-    "website",
-    "frontend",
-    "developer",
-    "responsive",
-    "modern",
-    "html5",
-    "css3",
-    "javascript",
-    "web-development"
-  ],
-  "author": {
-    "name": "Akshay Baiplawat",
-    "email": "akshay.baiplawat@example.com",
-    "url": "https://akshaybaiplawat.dev"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/akshay-baiplawat/portfolio-website.git"
-  },
-  "bugs": {
-    "url": "https://github.com/akshay-baiplawat/portfolio-website/issues"
-  },
-  "homepage": "https://akshay-baiplawat.github.io/portfolio-website",
-  "dependencies": {
-    "bootstrap": "^5.3.3"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "@vitest/coverage-v8": "^3.2.4",
-    "@vitest/ui": "^3.2.4",
-    "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.1",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-security": "^3.0.0",
-    "gh-pages": "^6.1.1",
-    "html-validate": "^9.7.1",
-    "husky": "^9.0.11",
-    "jsdom": "^24.1.0",
-    "lighthouse": "^12.0.0",
-    "lint-staged": "^15.2.7",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0",
-    "prettier": "^3.3.2",
-    "rimraf": "^5.0.7",
-    "terser": "^5.43.1",
-    "typescript": "^5.4.5",
-    "vite": "^7.0.6",
-    "vite-bundle-analyzer": "^0.7.0",
-    "vitest": "^3.2.4"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
-  },
-  "lint-staged": {
-    "*.{ts,js}": [
-      "eslint --fix",
-      "prettier --write"
+    "name": "portfolio-website",
+    "version": "1.0.0",
+    "description": "A modern, responsive portfolio website built with HTML, CSS, and JavaScript",
+    "main": "index.html",
+    "scripts": {
+        "dev": "vite",
+        "start": "npm run dev",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint src --ext .ts,.js --fix",
+        "lint:check": "eslint src --ext .ts,.js",
+        "format": "prettier --write \"src/**/*.{ts,js,css,html}\" \"*.{ts,js,json,md}\"",
+        "format:check": "prettier --check \"src/**/*.{ts,js,css,html}\" \"*.{ts,js,json,md}\"",
+        "type-check": "tsc --noEmit",
+        "test": "vitest",
+        "test:ui": "vitest --ui",
+        "test:coverage": "vitest --coverage",
+        "test:run": "vitest run",
+        "validate": "html-validate index.html",
+        "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./reports/lighthouse-report.html",
+        "deploy": "npm run build && gh-pages -d dist",
+        "clean": "rimraf dist reports coverage",
+        "security:audit": "npm audit",
+        "security:fix": "npm audit fix",
+        "analyze": "npm run build && npx vite-bundle-analyzer dist",
+        "prepare": "husky install",
+        "pre-commit": "lint-staged"
+    },
+    "keywords": [
+        "portfolio",
+        "website",
+        "frontend",
+        "developer",
+        "responsive",
+        "modern",
+        "html5",
+        "css3",
+        "javascript",
+        "web-development"
     ],
-    "*.{css,html,md,json}": [
-      "prettier --write"
+    "author": {
+        "name": "Akshay Baiplawat",
+        "email": "akshay.baiplawat@example.com",
+        "url": "https://akshaybaiplawat.dev"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akshay-baiplawat/portfolio-website.git"
+    },
+    "bugs": {
+        "url": "https://github.com/akshay-baiplawat/portfolio-website/issues"
+    },
+    "homepage": "https://akshay-baiplawat.github.io/portfolio-website",
+    "dependencies": {
+        "bootstrap": "^5.3.3"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.0.0",
+        "@typescript-eslint/parser": "^7.0.0",
+        "@vitest/coverage-v8": "^3.2.4",
+        "@vitest/ui": "^3.2.4",
+        "autoprefixer": "^10.4.19",
+        "cssnano": "^7.0.1",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-security": "^3.0.0",
+        "gh-pages": "^6.1.1",
+        "html-validate": "^9.7.1",
+        "husky": "^9.0.11",
+        "jsdom": "^24.1.0",
+        "lighthouse": "^12.0.0",
+        "lint-staged": "^15.2.7",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^11.0.0",
+        "prettier": "^3.3.2",
+        "rimraf": "^5.0.7",
+        "terser": "^5.43.1",
+        "typescript": "^5.4.5",
+        "vite": "^7.0.6",
+        "vite-bundle-analyzer": "^0.7.0",
+        "vitest": "^3.2.4"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=9.0.0"
+    },
+    "lint-staged": {
+        "*.{ts,js}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{css,html,md,json}": [
+            "prettier --write"
+        ]
+    },
+    "files": [
+        "index.html",
+        "src/",
+        "assets/",
+        "dist/",
+        "README.md",
+        "LICENSE"
     ]
-  },
-  "files": [
-    "index.html",
-    "src/",
-    "assets/",
-    "dist/",
-    "README.md",
-    "LICENSE"
-  ]
 }

@@ -7,45 +7,45 @@ import { vi } from 'vitest';
 
 // Mock console methods in tests
 global.console = {
-  ...console,
-  // Uncomment to ignore specific console methods in tests
-  // log: vi.fn(),
-  // warn: vi.fn(),
-  // error: vi.fn(),
-  info: vi.fn(),
+    ...console,
+    // Uncomment to ignore specific console methods in tests
+    // log: vi.fn(),
+    // warn: vi.fn(),
+    // error: vi.fn(),
+    info: vi.fn()
 };
 
 // Mock window.scrollY
 Object.defineProperty(window, 'scrollY', {
-  writable: true,
-  value: 0,
+    writable: true,
+    value: 0
 });
 
 // Mock IntersectionObserver
 global.IntersectionObserver = class IntersectionObserver {
-  root = null;
-  rootMargin = '';
-  thresholds = [];
-  
-  constructor() {}
-  observe() {
-    return null;
-  }
-  unobserve() {
-    return null;
-  }
-  disconnect() {
-    return null;
-  }
-  takeRecords() {
-    return [];
-  }
+    root = null;
+    rootMargin = '';
+    thresholds = [];
+
+    constructor() {}
+    observe() {
+        return null;
+    }
+    unobserve() {
+        return null;
+    }
+    disconnect() {
+        return null;
+    }
+    takeRecords() {
+        return [];
+    }
 } as any;
 
 // Mock third-party libraries
 (global as any).AOS = {
-  init: vi.fn(),
-  refresh: vi.fn(),
+    init: vi.fn(),
+    refresh: vi.fn()
 };
 
 (global as any).Typed = vi.fn();

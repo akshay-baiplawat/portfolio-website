@@ -35,13 +35,13 @@ This is a modern, production-ready portfolio website built with:
 
 ## 🛠️ Development Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run lint` | Lint JavaScript code |
-| `npm run format` | Format code with Prettier |
-| `npm run validate` | Validate HTML |
+| Command            | Description               |
+| ------------------ | ------------------------- |
+| `npm run dev`      | Start development server  |
+| `npm run build`    | Build for production      |
+| `npm run lint`     | Lint JavaScript code      |
+| `npm run format`   | Format code with Prettier |
+| `npm run validate` | Validate HTML             |
 
 ## 🎨 Customization
 
@@ -86,12 +86,12 @@ Add your images to `assets/images/`:
 ✅ **Contact Form** - Functional with validation  
 ✅ **SEO Optimized** - Meta tags and semantic HTML  
 ✅ **Performance** - Lightweight and fast loading  
-✅ **Accessibility** - WCAG compliant  
+✅ **Accessibility** - WCAG compliant
 
 ## 📱 Browser Support
 
 - Chrome (latest)
-- Firefox (latest) 
+- Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
@@ -116,16 +116,19 @@ npm run build
 ## 🚀 Deployment Options
 
 ### GitHub Pages
+
 ```bash
 npm run deploy
 ```
 
 ### Netlify
+
 1. Connect GitHub repository
 2. Build command: `npm run build`
 3. Publish directory: `dist`
 
 ### Vercel
+
 ```bash
 npm i -g vercel
 vercel
@@ -152,6 +155,7 @@ vercel
 ## 🆘 Troubleshooting
 
 ### Port 3000 already in use?
+
 ```bash
 # Kill process on port 3000
 lsof -ti:3000 | xargs kill -9
@@ -161,9 +165,11 @@ npx live-server --port=3001
 ```
 
 ### Node.js not found?
+
 Install Node.js from: https://nodejs.org/
 
 ### Permission denied on start.sh?
+
 ```bash
 chmod +x start.sh
 ```
@@ -171,6 +177,7 @@ chmod +x start.sh
 ## 📞 Support
 
 Need help? Check:
+
 - README.md for detailed documentation
 - Issues on GitHub repository
 - Contact: your.email@example.com
