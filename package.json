@@ -4,9 +4,9 @@
     "description": "A modern, responsive portfolio website built with HTML, CSS, and JavaScript",
     "main": "index.html",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --config vite.config.mjs",
         "start": "npm run dev",
-        "build": "tsc && vite build",
+        "build": "tsc && vite build --config vite.config.mjs",
         "preview": "vite preview",
         "lint": "eslint src --ext .ts,.js --fix",
         "lint:check": "eslint src --ext .ts,.js",
