@@ -1,0 +1,30 @@
+name: Lighthouse Performance Check
+
+on:
+  workflow_run:
+    workflows: ["CI/CD Pipeline"]
+    types:
+      - completed
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  lighthouse:
+    name: Lighthouse Performance Test
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.ref == 'refs/heads/main' }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Wait for GitHub Pages deployment
+        run: |
+          echo "Waiting for GitHub Pages to be ready..."
+          sleep 60
+        
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          configPath: './lighthouserc.js'
+          uploadArtifacts: true
+          temporaryPublicStorage: true

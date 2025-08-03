@@ -1,10 +1,8 @@
 module.exports = {
     ci: {
         collect: {
-            url: ['http://localhost:3000'],
-            startServerCommand: 'npm run preview',
-            startServerReadyPattern: 'Local:',
-            startServerReadyTimeout: 30000
+            url: ['https://akshay-baiplawat.github.io/portfolio-website/'],
+            // Remove local server commands since we're testing the live GitHub Pages site
         },
         assert: {
             assertions: {
