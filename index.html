@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Akshay Baiplawat - Portfolio</title>
+  <meta name="description" content="Professional portfolio website">
+  <meta name="keywords" content="portfolio, developer, designer">
+
+  <!-- Favicons -->
+  <link href="assets/images/favicon.png" rel="icon">
+  <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="src/styles/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <!-- Uncomment the line below if you also wish to use an text logo -->
+        <!-- <h1 class="sitename">Style</h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+
+        <div class="profile-img">
+          <img src="assets/images/hero-avatar.jpeg" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename">Akshay Baiplawat</h1>
+        </a>
+
+        <div class="social-links text-center">
+          <a href="https://github.com/akshay-baiplawat" class="github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/akshay-baiplawat-8182a2202/" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+          <a href="mailto:akshaybaiplawat@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
+        </div>
+
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container">
+        <div class="row g-0 align-items-center">
+
+          <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
+            <div class="content-wrapper">
+              <h1 class="hero-title">Creative <span class="typed" data-typed-items="Developer Associate, SAP Developer, Ex-Zoho Engineer, Tech Innovator">Developer Associate</span></h1>
+              <p class="lead">Developer Associate @SAP | Ex-Zoho | B.Tech @ NIT Allahabad. Expert in C++, SAP Integration Suite, and data structures. I develop cutting-edge software solutions with structured thinking and collaborative innovation.</p>
+
+
+              <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+              </div>
+
+              <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/akshay-baiplawat" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/akshay-baiplawat-8182a2202/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                <a href="mailto:akshaybaiplawat@gmail.com"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-delay="200">
+            <div class="image-container">
+              <div class="floating-elements">
+                <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="bi bi-puzzle"></i>
+                  <span>Problem Solving</span>
+                </div>
+                <div class="floating-card card-2" data-aos="zoom-in" data-aos-delay="400">
+                  <i class="bi bi-code-slash"></i>
+                  <span>Development</span>
+                </div>
+                <div class="floating-card card-3" data-aos="zoom-in" data-aos-delay="500">
+                  <i class="bi bi-robot"></i>
+                  <span>AI Agents</span>
+                </div>
+              </div>
+              <img src="assets/images/hero-avatar.jpeg" alt="Portfolio Hero" class="img-fluid hero-main-image">
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>About</h2>
+        <p>Discover my journey and passion for creating exceptional digital experiences</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+            <div class="profile-image-wrapper">
+              <div class="profile-image">
+                <img src="assets/images/hero-avatar.jpeg" alt="Profile" class="img-fluid">
+              </div>
+              <div class="signature-section">
+                <p class="quote">Building meaningful digital experiences through creative code.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-content">
+              <div class="intro">
+                <h2>Hi, I'm Akshay Baiplawat - Developer Associate @SAP</h2>
+                <p>Currently working as Developer Associate at SAP, specializing in SAP Integration Suite. Previously worked as Member of Technical Staff at Zoho for 1 year 4 months. I graduated from MNNIT Allahabad with B.Tech in Civil Engineering. My expertise includes C++, data structures & algorithms, and SAP technologies with a passion for collaborative innovation and problem-solving.</p>
+              </div>
+
+              <div class="skills-grid">
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="skill-icon">
+                    <i class="bi bi-code-square"></i>
+                  </div>
+                  <h4>Software Development</h4>
+                  <p>Expertise in C++, Java, and JavaScript with focus on scalable solutions</p>
+                </div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+                  <div class="skill-icon">
+                    <i class="bi bi-puzzle"></i>
+                  </div>
+                  <h4>Problem Solving</h4>
+                  <p>Strong foundation in Data Structures & Algorithms and system optimization</p>
+                </div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="skill-icon">
+                    <i class="bi bi-layers"></i>
+                  </div>
+                  <h4>Enterprise Integration</h4>
+                  <p>SAP Integration Suite, Spring Boot, and enterprise system connectivity</p>
+                </div>
+              </div>
+
+              <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
+                <div class="timeline-item">
+                  <div class="year">2019</div>
+                  <div class="description">Started B.Tech Civil Engineering at MNNIT Allahabad</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="year">2023</div>
+                  <div class="description">Graduated and joined Zoho as Member of Technical Staff</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="year">2024</div>
+                  <div class="description">Joined SAP as Developer Associate</div>
+                </div>
+              </div>
+
+              <div class="cta-section" data-aos="fade-up" data-aos-delay="400">
+                <div class="fun-fact">
+                  <span class="emoji">☕</span>
+                  <span class="text">Problem-solving engineer based in India</span>
+                </div>
+                <div class="action-buttons">
+                  <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                  <button type="button" class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#resumeDownloadModal">Download Resume</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="skills-grid">
+              <div class="row g-4">
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="200">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-braces"></i>
+                      <h3>Core Programming</h3>
+                    </div>
+                    <div class="skills-animation">
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">C++</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Core Java</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">JavaScript</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div><!-- End Frontend Card -->
+                </div>
+
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="300">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-cpu"></i>
+                      <h3>System Architecture & Algorithms</h3>
+                    </div>
+                    <div class="skills-animation">
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Problem Solving</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Data Structures</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">OOP Concepts</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Low Level Design</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Backend Card -->
+                </div>
+
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="400">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-gear-wide-connected"></i>
+                      <h3>Enterprise & Backend</h3>
+                    </div>
+                    <div class="skills-animation">
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">SAP Integration Suite</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Spring Boot</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div><!-- End Design Card -->
+                </div>
+
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="500">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-magic"></i>
+                      <h3>AI & Modern Tools</h3>
+                    </div>
+                    <div class="skills-animation">
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">SQL & DBMS</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Prompt Engineering</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">AI Tools Integration</span>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Git & GitHub</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End DevOps Card -->
+                </div>
+              </div>
+            </div><!-- End Skills Grid -->
+          </div>
+
+          <div class="col-lg-4">
+            <div class="skills-summary" data-aos="fade-left" data-aos-delay="200">
+              <h3>Professional Expertise</h3>
+              <p>Developer Associate at SAP with expertise in SAP Integration Suite, C++, Java, and JavaScript. Previously worked at Zoho Corporation, specializing in system programming, performance optimization, and developing scalable software solutions.</p>
+
+              <div class="summary-stats">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="stat-circle">
+                    <i class="bi bi-trophy"></i>
+                  </div>
+                  <div class="stat-info">
+                    <span class="stat-number">2+</span>
+                    <span class="stat-label">Years Experience</span>
+                  </div>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="stat-circle">
+                    <i class="bi bi-diagram-3"></i>
+                  </div>
+                  <div class="stat-info">
+                    <span class="stat-number">4+</span>
+                    <span class="stat-label">Major Projects</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div><!-- End Skills Summary -->
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Resume</h2>
+        <p>My professional journey from Civil Engineering to Software Development, showcasing experience at leading tech companies</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="experience-section">
+              <div class="section-header">
+                <h2><i class="bi bi-briefcase"></i> Professional Journey</h2>
+                <p class="section-subtitle">Experience in software development at SAP and Zoho Corporation, working on cutting-edge solutions and enterprise applications.</p>
+              </div>
+
+              <div class="experience-cards">
+                <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="card-header">
+                    <div class="role-info">
+                      <h3>Developer Associate</h3>
+                      <h4>SAP</h4>
+                    </div>
+                    <span class="duration">Nov 2024 - Present</span>
+                  </div>
+                  <div class="card-body">
+                    <p>Working as Developer Associate at SAP, specializing in SAP Integration Suite. Developing cutting-edge software solutions with expertise in integration technologies and enterprise applications.</p>
+                    <ul class="achievements">
+                      <li>Expertise in SAP Integration Suite for enterprise solutions</li>
+                      <li>Contributing to innovative software development projects</li>
+                      <li>Applying structured thinking to complex problem-solving</li>
+                      <li>Certified in Concur Standard Expense Configuration</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="experience-card" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="card-header">
+                    <div class="role-info">
+                      <h3>Member of Technical Staff</h3>
+                      <h4>Zoho Corporation</h4>
+                    </div>
+                    <span class="duration">Aug 2023 - Nov 2024</span>
+                  </div>
+                  <div class="card-body">
+                    <p>Worked as Member of Technical Staff at Zoho Corporation for 1 year 4 months, contributing to enterprise software development and system optimization. Specialized in developing high-performance applications using modern programming practices.</p>
+                    <ul class="achievements">
+                      <li>Developed cutting-edge software solutions using C++, focusing on performance optimization and system reliability</li>
+                      <li>Implemented robust data structures and algorithms to enhance application efficiency and scalability</li>
+                      <li>Applied object-oriented programming principles to create maintainable and extensible codebases</li>
+                      <li>Collaborated with cross-functional teams to deliver enterprise-grade software solutions</li>
+                      <li>Contributed to Windows system programming and remote access technologies</li>
+                      <li>Participated in code reviews and maintained high coding standards across development teams</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="experience-card" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="card-header">
+                    <div class="role-info">
+                      <h3>Intern</h3>
+                      <h4>Urban Improvement Trust Kota</h4>
+                    </div>
+                    <span class="duration">Jun 2021 - Jul 2021</span>
+                  </div>
+                  <div class="card-body">
+                    <p>Gained experience in real-life applications related to water treatment plant designing and field work during a 2-month internship in Kota, Rajasthan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="education-section">
+              <div class="section-header">
+                <h2><i class="bi bi-mortarboard"></i> Academic Excellence</h2>
+                <p class="section-subtitle">Educational foundation from MNNIT Allahabad with continuous learning in software development and enterprise technologies.</p>
+              </div>
+
+              <div class="education-timeline">
+                <div class="timeline-track"></div>
+
+                <div class="education-item" data-aos="slide-up" data-aos-delay="300">
+                  <div class="timeline-marker"></div>
+                  <div class="education-content">
+                    <div class="degree-header">
+                      <h3>Bachelor of Technology in Civil Engineering</h3>
+                      <span class="year">2019 - 2023</span>
+                    </div>
+                    <h4 class="institution">Motilal Nehru National Institute of Technology, Allahabad</h4>
+                    <p>Graduated with CPI: 7.02/10. Strong foundation in engineering principles, problem-solving, and analytical thinking. Developed programming skills and transitioned to software development.</p>
+                  </div>
+                </div>
+
+                <div class="education-item" data-aos="slide-up" data-aos-delay="400">
+                  <div class="timeline-marker"></div>
+                  <div class="education-content">
+                    <div class="degree-header">
+                      <h3>Technical Skills Development</h3>
+                      <span class="year">2019 - 2023</span>
+                    </div>
+                    <h4 class="institution">Self-Directed Learning During College</h4>
+                    <p>Developed expertise in C++, Core Java, JavaScript, React, Data Structures & Algorithms through comprehensive project work and programming practice alongside civil engineering studies.</p>
+                  </div>
+                </div>
+
+                <div class="education-item" data-aos="slide-up" data-aos-delay="500">
+                  <div class="timeline-marker"></div>
+                  <div class="education-content">
+                    <div class="degree-header">
+                      <h3>AI & Modern Technologies</h3>
+                      <span class="year">2023 - Present</span>
+                    </div>
+                    <h4 class="institution">Continuous Professional Learning</h4>
+                    <p>Actively learning AI technologies including prompt engineering and AI tool integration. Expanding backend expertise with Spring Boot framework, microservices architecture, and modern development practices. Focusing on practical applications for professional work optimization and productivity enhancement.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Portfolio</h2>
+        <p>Check out some of my recent work and creative projects</p>
+      </div><!-- End Section Title -->
+
+      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+            <li data-filter="*" class="filter-active">
+              <i class="bi bi-grid-3x3"></i> All Projects
+            </li>
+            <li data-filter=".filter-ui">
+              UI/UX
+            </li>
+            <li data-filter=".filter-development">
+              Development
+            </li>
+            <li data-filter=".filter-photography">
+              Photography
+            </li>
+            <li data-filter=".filter-marketing">
+              Marketing
+            </li>
+          </ul>
+
+          <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-1.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Web Application</div>
+                      <h3 class="entry-title">Movie List Website</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-1.webp" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Movie List Website; description: Web application built with modern frontend technologies for browsing and managing movie collections.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-10.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Algorithm Visualization</div>
+                      <h3 class="entry-title">Learn ALGO</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-10.webp" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Learn ALGO; description: Algorithm visualization platform for learning data structures and algorithms with interactive demonstrations.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-7.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Console Application</div>
+                      <h3 class="entry-title">Employee Management System</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-7.webp" class="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Employee Management System; description: Console-based application for managing employee records built with C++ and object-oriented programming principles.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-4.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Game Development</div>
+                      <h3 class="entry-title">Duck-Hunt Game</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-4.webp" class="glightbox" data-gallery="portfolio-gallery-marketing" data-glightbox="title: Duck-Hunt Game; description: Classic arcade-style game recreation demonstrating game development skills and user interface design.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-2.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Windows Software</div>
+                      <h3 class="entry-title">ZOHO Assist Windows Agent</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-2.webp" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: ZOHO Assist Windows Agent; description: Professional software development project for remote access solutions using C++ and Windows system programming.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-11.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Performance Optimization</div>
+                      <h3 class="entry-title">Session Audit Feature</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-11.webp" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Session Audit Feature; description: Performance optimization feature for enterprise software, improving system efficiency and user experience.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-8.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Photography</div>
+                      <h3 class="entry-title">Nature Collection</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-8.webp" class="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Nature Collection; description: Photography portfolio showcasing technical composition and artistic vision in natural environments.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="assets/images/portfolio-5.webp" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Marketing</div>
+                      <h3 class="entry-title">Brand Strategy</h3>
+                      <div class="entry-links">
+                        <a href="assets/images/portfolio-5.webp" class="glightbox" data-gallery="portfolio-gallery-marketing" data-glightbox="title: Brand Strategy; description: Professional brand development project focusing on visual identity and strategic marketing solutions.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="portfolio-details.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Contact</h2>
+        <p>Let's work together on your next project</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5">
+            <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+              <h3>Contact Info</h3>
+              <p>Ready to collaborate on innovative software solutions. Feel free to reach out for professional opportunities, project discussions, or technical consultations.</p>
+
+              <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="content">
+                  <h4>Location</h4>
+                  <p>India</p>
+                  <p>Available for Remote Work</p>
+                </div>
+              </div>
+
+              <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <div class="content">
+                  <h4>Phone Number</h4>
+                  <p>+91 7357117202</p>
+                  <p>Available for calls</p>
+                </div>
+              </div>
+
+              <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div class="content">
+                  <h4>Email Address</h4>
+                  <p>akshaybaiplawat@gmail.com</p>
+                  <p>Professional inquiries welcome</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+              <h3>Get In Touch</h3>
+              <p>Let's discuss your next project or explore collaboration opportunities. I'm always interested in innovative software development challenges.</p>
+
+              <form action="https://formsubmit.co/akshaybaiplawat@gmail.com" method="post" class="contact-form-submission" data-aos="fade-up" data-aos-delay="200">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Thank you for contacting Akshay! Your message has been received and will be responded to soon.">
+                
+                <div class="row gy-4">
+
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <div class="loading" style="display: none;">Loading...</div>
+                    <div class="error-message" style="display: none;"></div>
+                    <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
+
+                    <button type="submit" class="btn">Send Message</button>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Akshay Baiplawat</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/akshay-baiplawat" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/akshay-baiplawat-8182a2202/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:akshaybaiplawat@gmail.com"><i class="bi bi-envelope"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://www.linkedin.com/in/akshay-baiplawat-8182a2202/" target="_blank" rel="noopener noreferrer">Akshay Baiplawat</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Resume Download Modal -->
+  <div class="modal fade" id="resumeDownloadModal" tabindex="-1" aria-labelledby="resumeDownloadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resumeDownloadModalLabel">
+            <i class="bi bi-download me-2"></i>Download Resume
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-3">Please provide your email to download Akshay's resume. You'll receive a copy confirmation as well.</p>
+          <form id="resumeDownloadForm">
+            <div class="mb-3">
+              <label for="downloaderEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="downloaderEmail" name="email" placeholder="your.email@example.com" required>
+              <div class="form-text">We'll send you a confirmation and notify Akshay about the download.</div>
+            </div>
+            <div class="mb-3">
+              <label for="downloaderName" class="form-label">Name (Optional)</label>
+              <input type="text" class="form-control" id="downloaderName" name="name" placeholder="Your name">
+            </div>
+            <div class="mb-3">
+              <label for="downloaderMessage" class="form-label">Message (Optional)</label>
+              <textarea class="form-control" id="downloaderMessage" name="message" rows="2" placeholder="Brief message or inquiry..."></textarea>
+            </div>
+          </form>
+          <div class="download-status">
+            <div class="loading-download" style="display: none;">
+              <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+              Processing download...
+            </div>
+            <div class="error-download" style="display: none; color: #dc3545;"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="confirmDownload">
+            <i class="bi bi-download me-1"></i>Download Resume
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/noframework.waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Main TypeScript File -->
+  <script type="module" src="src/main.ts"></script>
+
+</body>
+</html>

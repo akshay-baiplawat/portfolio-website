@@ -1,0 +1,27 @@
+# Image Assets
+
+Add your project images here:
+
+## Required Images:
+- hero-avatar.jpeg (400x400px) - Your profile picture
+- project-1.jpg (600x400px) - E-commerce platform screenshot
+- project-2.jpg (600x400px) - Task management app screenshot
+- project-3.jpg (600x400px) - Weather app screenshot
+- project-4.jpg (600x400px) - Design system screenshot
+
+## Image Guidelines:
+- Use optimized images (WebP format preferred)
+- Compress images for web (aim for <200KB each)
+- Use consistent aspect ratios
+- Include alt text for accessibility
+
+## Free Image Resources:
+- Unsplash (https://unsplash.com)
+- Pexels (https://pexels.com)
+- Freepik (https://freepik.com)
+
+## Project Screenshot Tools:
+- Mockup generators
+- Figma screenshots
+- Live website screenshots
+- Mobile app mockups
