@@ -15,7 +15,7 @@
         "type-check": "tsc --noEmit",
         "test": "vitest",
         "test:ui": "vitest --ui",
-        "test:coverage": "vitest --coverage",
+        "test:coverage": "vitest --coverage --config vitest.config.mjs",
         "test:run": "vitest run --config vitest.config.mjs",
         "validate": "html-validate index.html",
         "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./reports/lighthouse-report.html",
