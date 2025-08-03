@@ -320,9 +320,9 @@ class PortfolioApplication implements PortfolioApp {
    */
   private throttle(func: Function, limit: number): Function {
     let inThrottle: boolean;
-    return function() {
+    return function(this: any, ...args: any[]) {
       if (!inThrottle) {
-        func.apply(this, arguments);
+        func.apply(this, args);
         inThrottle = true;
         setTimeout(() => (inThrottle = false), limit);
       }
