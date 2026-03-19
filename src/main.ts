@@ -7,6 +7,7 @@
  */
 
 import './styles/main.css';
+import { getProjectById, getNextProject, type ProjectData } from './data/projects';
 
 // Type definitions
 interface NavigationConfig {
@@ -29,6 +30,9 @@ class PortfolioApplication implements PortfolioApp {
     private header: HTMLElement | null = null;
     private body: HTMLElement | null = null;
     private navLinks: NodeListOf<HTMLElement> | null = null;
+    private portfolioModal: HTMLElement | null = null;
+    private modalSwiper: any = null;
+    private currentProjectId: string | null = null;
 
     private isDestroyed = false;
 
@@ -179,6 +183,7 @@ class PortfolioApplication implements PortfolioApp {
         this.initializeGLightbox();
         this.initializeIsotope();
         this.initializeSwiper();
+        this.initializePortfolioDetails();
     }
 
     /**
@@ -282,9 +287,9 @@ class PortfolioApplication implements PortfolioApp {
      */
     private initializeSwiper(): void {
         if (typeof Swiper !== 'undefined') {
-            const swiperElements = document.querySelectorAll('.swiper');
+            const swiperElements = document.querySelectorAll('.swiper:not(.portfolio-details-slider)');
             swiperElements.forEach(() => {
-                new Swiper('.swiper', {
+                new Swiper('.swiper:not(.portfolio-details-slider)', {
                     loop: true,
                     speed: 600,
                     autoplay: {
@@ -298,6 +303,216 @@ class PortfolioApplication implements PortfolioApp {
                     }
                 });
             });
+        }
+    }
+
+    /**
+     * Initialize Portfolio Details Modal
+     */
+    private initializePortfolioDetails(): void {
+        this.portfolioModal = document.getElementById('portfolioDetailsModal');
+        if (!this.portfolioModal) return;
+
+        // Set up click handlers for portfolio detail triggers
+        const triggers = document.querySelectorAll('.portfolio-details-trigger');
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectId = trigger.getAttribute('data-project-id');
+                if (projectId) {
+                    this.openProjectModal(projectId);
+                }
+            });
+        });
+
+        // Handle modal hidden event to clean up Swiper
+        this.portfolioModal.addEventListener('hidden.bs.modal', () => {
+            this.destroyModalSwiper();
+        });
+
+        // Handle "Next Project" button click
+        const nextProjectBtn = document.getElementById('nextProjectBtn');
+        if (nextProjectBtn) {
+            nextProjectBtn.addEventListener('click', () => {
+                if (this.currentProjectId) {
+                    const nextProject = getNextProject(this.currentProjectId);
+                    this.populateModalContent(nextProject);
+                }
+            });
+        }
+    }
+
+    /**
+     * Open the portfolio details modal with project data
+     */
+    private openProjectModal(projectId: string): void {
+        const project = getProjectById(projectId);
+        if (!project) return;
+
+        this.populateModalContent(project);
+    }
+
+    /**
+     * Populate modal content with project data
+     */
+    private populateModalContent(project: ProjectData): void {
+        this.currentProjectId = project.id;
+
+        // Update slider images
+        const sliderWrapper = document.getElementById('portfolioSliderWrapper');
+        if (sliderWrapper) {
+            sliderWrapper.innerHTML = project.galleryImages
+                .map(img => `<div class="swiper-slide"><img src="${img}" alt="${project.title}" class="img-fluid"></div>`)
+                .join('');
+        }
+
+        // Update technology tags
+        const techTags = document.getElementById('portfolioTechTags');
+        if (techTags) {
+            techTags.innerHTML = project.technologies
+                .map(tech => `<span class="badge bg-light text-dark me-2 mb-2">${tech}</span>`)
+                .join('');
+        }
+
+        // Update project info
+        const categoryEl = document.getElementById('portfolioCategory');
+        if (categoryEl) categoryEl.textContent = project.categoryLabel;
+
+        const dateEl = document.getElementById('portfolioDate');
+        if (dateEl) dateEl.textContent = project.date;
+
+        const titleEl = document.getElementById('portfolioTitle');
+        if (titleEl) titleEl.textContent = project.title;
+
+        const clientEl = document.getElementById('portfolioClient');
+        if (clientEl) {
+            if (project.client) {
+                clientEl.style.display = 'block';
+                const clientSpan = clientEl.querySelector('span');
+                if (clientSpan) clientSpan.textContent = project.client;
+            } else {
+                clientEl.style.display = 'none';
+            }
+        }
+
+        const descEl = document.getElementById('portfolioDescription');
+        if (descEl) descEl.textContent = project.description;
+
+        // Update accordion sections
+        const overviewEl = document.getElementById('portfolioOverview');
+        if (overviewEl) overviewEl.textContent = project.overview;
+
+        const challengeEl = document.getElementById('portfolioChallenge');
+        if (challengeEl) challengeEl.textContent = project.challenge;
+
+        const solutionEl = document.getElementById('portfolioSolution');
+        if (solutionEl) solutionEl.textContent = project.solution;
+
+        // Update features
+        const featuresEl = document.getElementById('portfolioFeatures');
+        if (featuresEl) {
+            featuresEl.innerHTML = project.features
+                .map(feature => `
+                    <div class="col-md-6 mb-2">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            <span>${feature}</span>
+                        </div>
+                    </div>
+                `)
+                .join('');
+        }
+
+        // Update action buttons
+        const liveUrlBtn = document.getElementById('portfolioLiveUrl') as HTMLAnchorElement;
+        if (liveUrlBtn) {
+            if (project.liveUrl && project.liveUrl !== '#') {
+                liveUrlBtn.href = project.liveUrl;
+                liveUrlBtn.style.display = 'inline-block';
+            } else {
+                liveUrlBtn.style.display = 'none';
+            }
+        }
+
+        const githubBtn = document.getElementById('portfolioGithubUrl') as HTMLAnchorElement;
+        if (githubBtn) {
+            if (project.githubUrl && project.githubUrl !== '#') {
+                githubBtn.href = project.githubUrl;
+                githubBtn.style.display = 'inline-block';
+            } else {
+                githubBtn.style.display = 'none';
+            }
+        }
+
+        // Initialize or reinitialize Swiper for modal
+        this.initModalSwiper();
+
+        // Reset accordion to show overview by default
+        this.resetAccordion();
+    }
+
+    /**
+     * Initialize Swiper for the modal carousel
+     */
+    private initModalSwiper(): void {
+        // Destroy existing Swiper if any
+        this.destroyModalSwiper();
+
+        if (typeof Swiper !== 'undefined') {
+            // Small delay to ensure DOM is updated
+            setTimeout(() => {
+                const swiperOptions = {
+                    loop: true,
+                    speed: 600,
+                    autoplay: {
+                        delay: 5000
+                    },
+                    slidesPerView: 1,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
+                };
+                this.modalSwiper = new Swiper('.portfolio-details-slider', swiperOptions as any);
+            }, 100);
+        }
+    }
+
+    /**
+     * Destroy modal Swiper instance
+     */
+    private destroyModalSwiper(): void {
+        if (this.modalSwiper) {
+            this.modalSwiper.destroy(true, true);
+            this.modalSwiper = null;
+        }
+    }
+
+    /**
+     * Reset accordion to show overview section
+     */
+    private resetAccordion(): void {
+        // Collapse all
+        const collapseElements = document.querySelectorAll('#portfolioAccordion .accordion-collapse');
+        collapseElements.forEach(el => {
+            el.classList.remove('show');
+        });
+
+        const accordionButtons = document.querySelectorAll('#portfolioAccordion .accordion-button');
+        accordionButtons.forEach(btn => {
+            btn.classList.add('collapsed');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+
+        // Show overview
+        const overviewCollapse = document.getElementById('collapseOverview');
+        const overviewButton = document.querySelector('[data-bs-target="#collapseOverview"]');
+        if (overviewCollapse) {
+            overviewCollapse.classList.add('show');
+        }
+        if (overviewButton) {
+            overviewButton.classList.remove('collapsed');
+            overviewButton.setAttribute('aria-expanded', 'true');
         }
     }
 
