@@ -471,7 +471,8 @@ class PortfolioApplication implements PortfolioApp {
 
             // Start download regardless of tracking status
             const downloadLink = document.createElement('a');
-            downloadLink.href = 'assets/documents/Akshay_Baiplawat_Resume.pdf';
+            const basePath = import.meta.env.BASE_URL || '/';
+            downloadLink.href = `${basePath}assets/documents/Akshay_Baiplawat_Resume.pdf`;
             downloadLink.download = 'Akshay_Baiplawat_Resume.pdf';
             document.body.appendChild(downloadLink);
             downloadLink.click();
