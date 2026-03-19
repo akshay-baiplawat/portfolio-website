@@ -418,7 +418,7 @@ class PortfolioApplication implements PortfolioApp {
         const confirmDownloadBtn = document.getElementById('confirmDownload');
         if (!confirmDownloadBtn) return;
 
-        confirmDownloadBtn.addEventListener('click', async () => {
+        confirmDownloadBtn.addEventListener('click', () => {
             const form = document.getElementById('resumeDownloadForm') as HTMLFormElement;
             const emailInput = document.getElementById('downloaderEmail') as HTMLInputElement;
             const nameInput = document.getElementById('downloaderName') as HTMLInputElement;
@@ -441,60 +441,56 @@ class PortfolioApplication implements PortfolioApp {
             errorDiv.style.display = 'none';
             confirmDownloadBtn.setAttribute('disabled', 'true');
 
+            // Attempt tracking but don't block download on failure
             try {
-                // Prepare tracking data
-                const trackingData = new FormData();
-                trackingData.append('_subject', 'Resume Downloaded - Notification for Akshay');
-                trackingData.append('_template', 'table');
-                trackingData.append('_captcha', 'false');
-                trackingData.append('downloader_email', emailInput.value);
-                trackingData.append('downloader_name', nameInput.value || 'Not provided');
-                trackingData.append('downloader_message', messageInput.value || 'No message');
-                trackingData.append('download_timestamp', new Date().toLocaleString());
-                trackingData.append('download_type', 'Resume PDF');
-
-                // Send tracking notification to your email
-                const response = await fetch('https://formsubmit.co/akshaybaiplawat@gmail.com', {
+                fetch('https://formsubmit.co/ajax/akshaybaiplawat@gmail.com', {
                     method: 'POST',
-                    body: trackingData
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: 'Resume Downloaded - Notification for Akshay',
+                        _template: 'table',
+                        _captcha: 'false',
+                        downloader_email: emailInput.value,
+                        downloader_name: nameInput.value || 'Not provided',
+                        downloader_message: messageInput.value || 'No message',
+                        download_timestamp: new Date().toLocaleString(),
+                        download_type: 'Resume PDF'
+                    })
+                }).catch(() => {
+                    // Tracking failed silently - don't block download
                 });
-
-                if (response.ok) {
-                    // Hide loading
-                    loadingDiv.style.display = 'none';
-
-                    // Start download
-                    const downloadLink = document.createElement('a');
-                    downloadLink.href = 'assets/documents/Akshay_Baiplawat_Resume.pdf';
-                    downloadLink.download = 'Akshay_Baiplawat_Resume.pdf';
-                    document.body.appendChild(downloadLink);
-                    downloadLink.click();
-                    document.body.removeChild(downloadLink);
-
-                    // Show success toast (optional)
-                    this.showDownloadSuccess(emailInput.value);
-
-                    // Reset form and close modal
-                    form.reset();
-
-                    setTimeout(() => {
-                        const modal = document.getElementById('resumeDownloadModal');
-                        const closeButton = modal?.querySelector('.btn-close') as HTMLElement;
-                        if (closeButton) {
-                            closeButton.click();
-                        }
-                    }, 1500); // 1.5 second delay to ensure download starts and user sees success
-                } else {
-                    throw new Error('Failed to track download');
-                }
-            } catch (error) {
-                loadingDiv.style.display = 'none';
-                errorDiv.style.display = 'block';
-                errorDiv.textContent = 'Download tracking failed. Please try again.';
-                // Resume download tracking error
-            } finally {
-                confirmDownloadBtn.removeAttribute('disabled');
+            } catch {
+                // Tracking setup failed - continue with download
             }
+
+            // Hide loading
+            loadingDiv.style.display = 'none';
+
+            // Start download regardless of tracking status
+            const downloadLink = document.createElement('a');
+            downloadLink.href = 'assets/documents/Akshay_Baiplawat_Resume.pdf';
+            downloadLink.download = 'Akshay_Baiplawat_Resume.pdf';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+
+            // Show success toast
+            this.showDownloadSuccess(emailInput.value);
+
+            // Reset form and close modal
+            form.reset();
+            confirmDownloadBtn.removeAttribute('disabled');
+
+            setTimeout(() => {
+                const modal = document.getElementById('resumeDownloadModal');
+                const closeButton = modal?.querySelector('.btn-close') as HTMLElement;
+                if (closeButton) {
+                    closeButton.click();
+                }
+            }, 1500);
         });
     }
 
