@@ -2,6 +2,8 @@
  * Global type declarations for third-party libraries
  */
 
+/// <reference types="vite/client" />
+
 // AOS (Animate On Scroll) types
 declare global {
     interface AOSConfig {
