@@ -2961,6 +2961,211 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Portfolio Details Modal Styles
+--------------------------------------------------------------*/
+#portfolioDetailsModal .modal-content {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#portfolioDetailsModal .modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 1rem 1.5rem;
+}
+
+#portfolioDetailsModal .btn-close {
+    background-color: var(--contrast-color);
+    border-radius: 50%;
+    padding: 0.75rem;
+    opacity: 1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#portfolioDetailsModal .btn-close:hover {
+    opacity: 0.8;
+}
+
+#portfolioDetailsModal .modal-body {
+    padding: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#portfolioDetailsModal .portfolio-details {
+    padding: 1.5rem;
+}
+
+#portfolioDetailsModal .portfolio-details-slider {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#portfolioDetailsModal .portfolio-details-slider .swiper-slide img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+}
+
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-next,
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-prev {
+    background-color: var(--contrast-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-next:after,
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-prev:after {
+    font-size: 14px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-next:hover,
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-prev:hover {
+    background-color: var(--accent-color);
+}
+
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-next:hover:after,
+#portfolioDetailsModal .portfolio-details-slider .swiper-button-prev:hover:after {
+    color: var(--contrast-color);
+}
+
+#portfolioDetailsModal .portfolio-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+#portfolioDetailsModal .portfolio-tech-tags .badge {
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+#portfolioDetailsModal .portfolio-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+#portfolioDetailsModal .portfolio-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+#portfolioDetailsModal .portfolio-link:hover {
+    text-decoration: underline;
+}
+
+#portfolioDetailsModal .portfolio-description {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+#portfolioDetailsModal .accordion-item {
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+#portfolioDetailsModal .accordion-button {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.875rem 1rem;
+    background-color: var(--surface-color);
+    color: var(--heading-color);
+}
+
+#portfolioDetailsModal .accordion-button:not(.collapsed) {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+    color: var(--accent-color);
+    box-shadow: none;
+}
+
+#portfolioDetailsModal .accordion-button:focus {
+    box-shadow: none;
+    border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+#portfolioDetailsModal .accordion-button i {
+    color: var(--accent-color);
+}
+
+#portfolioDetailsModal .accordion-body {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    padding: 1rem;
+}
+
+#portfolioDetailsModal .portfolio-features h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+#portfolioDetailsModal .portfolio-features h4 i {
+    color: var(--accent-color);
+}
+
+#portfolioDetailsModal .portfolio-features .bi-check-circle-fill {
+    font-size: 0.9rem;
+}
+
+#portfolioDetailsModal .modal-footer {
+    background-color: var(--surface-color);
+    padding: 1rem 1.5rem;
+}
+
+#portfolioDetailsModal .modal-footer .btn {
+    border-radius: 8px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 991px) {
+    #portfolioDetailsModal .modal-body {
+        max-height: 85vh;
+    }
+
+    #portfolioDetailsModal .portfolio-info h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 575px) {
+    #portfolioDetailsModal .portfolio-details {
+        padding: 1rem;
+    }
+
+    #portfolioDetailsModal .modal-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #portfolioDetailsModal .modal-footer .btn {
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .service-hero {
