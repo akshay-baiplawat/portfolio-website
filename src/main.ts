@@ -287,7 +287,9 @@ class PortfolioApplication implements PortfolioApp {
      */
     private initializeSwiper(): void {
         if (typeof Swiper !== 'undefined') {
-            const swiperElements = document.querySelectorAll('.swiper:not(.portfolio-details-slider)');
+            const swiperElements = document.querySelectorAll(
+                '.swiper:not(.portfolio-details-slider)'
+            );
             swiperElements.forEach(() => {
                 new Swiper('.swiper:not(.portfolio-details-slider)', {
                     loop: true,
@@ -316,7 +318,7 @@ class PortfolioApplication implements PortfolioApp {
         // Set up click handlers for portfolio detail triggers
         const triggers = document.querySelectorAll('.portfolio-details-trigger');
         triggers.forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
+            trigger.addEventListener('click', e => {
                 e.preventDefault();
                 const projectId = trigger.getAttribute('data-project-id');
                 if (projectId) {
@@ -362,7 +364,10 @@ class PortfolioApplication implements PortfolioApp {
         const sliderWrapper = document.getElementById('portfolioSliderWrapper');
         if (sliderWrapper) {
             sliderWrapper.innerHTML = project.galleryImages
-                .map(img => `<div class="swiper-slide"><img src="${img}" alt="${project.title}" class="img-fluid"></div>`)
+                .map(
+                    img =>
+                        `<div class="swiper-slide"><img src="${img}" alt="${project.title}" class="img-fluid"></div>`
+                )
                 .join('');
         }
 
@@ -412,14 +417,16 @@ class PortfolioApplication implements PortfolioApp {
         const featuresEl = document.getElementById('portfolioFeatures');
         if (featuresEl) {
             featuresEl.innerHTML = project.features
-                .map(feature => `
+                .map(
+                    feature => `
                     <div class="col-md-6 mb-2">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill text-primary me-2"></i>
                             <span>${feature}</span>
                         </div>
                     </div>
-                `)
+                `
+                )
                 .join('');
         }
 
@@ -493,7 +500,9 @@ class PortfolioApplication implements PortfolioApp {
      */
     private resetAccordion(): void {
         // Collapse all
-        const collapseElements = document.querySelectorAll('#portfolioAccordion .accordion-collapse');
+        const collapseElements = document.querySelectorAll(
+            '#portfolioAccordion .accordion-collapse'
+        );
         collapseElements.forEach(el => {
             el.classList.remove('show');
         });
