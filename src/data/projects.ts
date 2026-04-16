@@ -43,7 +43,14 @@ export const projects: ProjectData[] = [
             'assets/images/finance-tracker-4.jpeg',
             'assets/images/finance-tracker-5.jpeg'
         ],
-        technologies: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Clean Architecture', 'SQLite', 'WorkManager'],
+        technologies: [
+            'Kotlin',
+            'Jetpack Compose',
+            'MVVM',
+            'Clean Architecture',
+            'SQLite',
+            'WorkManager'
+        ],
         description:
             'Privacy-centric Android finance tracking app with intelligent SMS parsing and automated transaction categorization.',
         overview:
@@ -98,7 +105,8 @@ export const projects: ProjectData[] = [
         ],
         githubUrl: 'https://github.com/akshay-baiplawat/jarvis-agent',
         linkedinUrl: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7372653576822669312',
-        linkedinEmbedUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7372653576822669312'
+        linkedinEmbedUrl:
+            'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7372653576822669312'
     },
     {
         id: 'portfolio-website',
@@ -184,7 +192,15 @@ export const projects: ProjectData[] = [
             'assets/images/portfolio-1.webp',
             'assets/images/portfolio-10.webp'
         ],
-        technologies: ['React', 'React Router', 'Material UI', 'JavaScript', 'HTML', 'CSS', 'OMDB API'],
+        technologies: [
+            'React',
+            'React Router',
+            'Material UI',
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'OMDB API'
+        ],
         description:
             'Captivating movie listing website with seamless search functionality and detailed information on movies and web series.',
         overview:
@@ -220,7 +236,14 @@ export const projects: ProjectData[] = [
             'assets/images/portfolio-4.webp',
             'assets/images/portfolio-3.webp'
         ],
-        technologies: ['React', 'p5.js', 'JavaScript', 'Data Structures', 'Algorithms', 'Canvas API'],
+        technologies: [
+            'React',
+            'p5.js',
+            'JavaScript',
+            'Data Structures',
+            'Algorithms',
+            'Canvas API'
+        ],
         description:
             'Immersive web application for visualizing and learning algorithms through interactive animations.',
         overview:
@@ -251,16 +274,14 @@ export const projects: ProjectData[] = [
         date: 'April 2022',
         client: 'Academic Project',
         mainImage: 'assets/images/duck-hunt.png',
-        galleryImages: [
-            'assets/images/duck-hunt.png'
-        ],
+        galleryImages: ['assets/images/duck-hunt.png'],
         technologies: ['Java', 'ACM Graphics', 'Multi-threading', 'OOP', 'Game Mechanics'],
         description:
             'Single-player arcade shooting game inspired by the classic 80s duck hunt with dynamic difficulty.',
         overview:
             'Developed a retro-style arcade game using core Java and ACM Graphics library, featuring multi-threaded game mechanics for smooth concurrent animations and responsive player interactions.',
         challenge:
-            'Implementing smooth concurrent animations for multiple moving targets while handling user input, collision detection, and progressive difficulty scaling, all within Java\'s single-threaded graphics constraints.',
+            "Implementing smooth concurrent animations for multiple moving targets while handling user input, collision detection, and progressive difficulty scaling, all within Java's single-threaded graphics constraints.",
         solution:
             'Utilized multi-threading to manage independent duck movements and animations concurrently. Implemented dynamic difficulty scaling with varying duck health, speed, and spawn patterns. Designed an interactive UI with 2D graphics using ACM library for classic arcade aesthetics.',
         features: [

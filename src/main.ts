@@ -418,7 +418,10 @@ class PortfolioApplication implements PortfolioApp {
             } else {
                 sliderContainer.classList.remove('video-only');
                 sliderWrapper.innerHTML = project.galleryImages
-                    .map(img => `<div class="swiper-slide"><img src="${img}" alt="${project.title}" class="img-fluid"></div>`)
+                    .map(
+                        img =>
+                            `<div class="swiper-slide"><img src="${img}" alt="${project.title}" class="img-fluid"></div>`
+                    )
                     .join('');
                 // Show navigation buttons for image gallery
                 const prevBtn = sliderContainer.querySelector('.swiper-button-prev') as HTMLElement;
@@ -500,7 +503,10 @@ class PortfolioApplication implements PortfolioApp {
                 if (linkText) {
                     if (project.linkedinUrl) {
                         linkText.textContent = 'View LinkedIn Post';
-                    } else if (project.liveUrl?.includes('youtube.com') || project.liveUrl?.includes('youtu.be')) {
+                    } else if (
+                        project.liveUrl?.includes('youtube.com') ||
+                        project.liveUrl?.includes('youtu.be')
+                    ) {
                         linkText.textContent = 'View Demo Video';
                     } else {
                         linkText.textContent = 'View Live Project';
@@ -535,7 +541,10 @@ class PortfolioApplication implements PortfolioApp {
         if (downloadBtn) {
             if (project.downloadUrl) {
                 downloadBtn.href = project.downloadUrl;
-                downloadBtn.setAttribute('download', project.downloadUrl.split('/').pop() || 'download');
+                downloadBtn.setAttribute(
+                    'download',
+                    project.downloadUrl.split('/').pop() || 'download'
+                );
                 downloadBtn.style.display = 'inline-block';
             } else {
                 downloadBtn.style.display = 'none';
