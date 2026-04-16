@@ -95,12 +95,7 @@ export const projects: ProjectData[] = [
         date: 'January 2025',
         client: 'Personal Project',
         mainImage: portfolio10,
-        galleryImages: [
-            portfolio10,
-            portfolio11,
-            portfolio7,
-            portfolio8
-        ],
+        galleryImages: [portfolio10, portfolio11, portfolio7, portfolio8],
         technologies: ['Python', 'LiveKit Agents SDK', 'Gemini 2.5 Flash', 'WebRTC', 'Mem0', 'MCP'],
         description:
             'Real-time multimodal AI voice assistant with vision capabilities and persistent memory.',
@@ -132,12 +127,7 @@ export const projects: ProjectData[] = [
         date: 'November 2024',
         client: 'Personal Project',
         mainImage: portfolio2,
-        galleryImages: [
-            portfolio2,
-            portfolio1,
-            portfolio10,
-            portfolio11
-        ],
+        galleryImages: [portfolio2, portfolio1, portfolio10, portfolio11],
         technologies: ['TypeScript', 'Vite', 'Bootstrap', 'GitHub Actions', 'Vitest', 'Trivy'],
         description:
             'High-performance portfolio platform with enterprise-grade CI/CD and security auditing.',
@@ -168,12 +158,7 @@ export const projects: ProjectData[] = [
         date: 'March 2022',
         client: 'Academic Project',
         mainImage: portfolio4,
-        galleryImages: [
-            portfolio4,
-            portfolio5,
-            portfolio7,
-            portfolio8
-        ],
+        galleryImages: [portfolio4, portfolio5, portfolio7, portfolio8],
         technologies: ['C++', 'OOP', 'Windows C++', 'CMake', 'Data Structures', 'Algorithms'],
         description:
             'Comprehensive console-based application for efficient employee data management with advanced search capabilities.',
