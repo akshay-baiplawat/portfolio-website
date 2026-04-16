@@ -213,8 +213,7 @@ class PortfolioApplication implements PortfolioApp {
                     loop: true,
                     typeSpeed: 80,
                     backSpeed: 40,
-                    backDelay: 3000,
-                    startDelay: 500
+                    backDelay: 3000
                 });
             }
         }
