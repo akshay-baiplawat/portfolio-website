@@ -20,50 +20,64 @@ export interface ProjectData {
     features: string[];
     liveUrl?: string;
     githubUrl?: string;
+    linkedinUrl?: string;
+    linkedinEmbedUrl?: string;
+    livePreviewUrl?: string;
+    youtubeEmbedUrl?: string;
+    downloadUrl?: string;
 }
 
 export const projects: ProjectData[] = [
     {
-        id: 'movie-list-website',
-        title: 'Movie List Website',
+        id: 'finance-tracker',
+        title: 'Finance Tracker',
         category: 'filter-ui',
-        categoryLabel: 'Web Application',
-        date: 'January 2024',
+        categoryLabel: 'Mobile Application',
+        date: 'December 2024',
         client: 'Personal Project',
-        mainImage: 'assets/images/portfolio-1.webp',
+        mainImage: 'assets/images/finance-tracker-1.jpeg',
         galleryImages: [
-            'assets/images/portfolio-1.webp',
-            'assets/images/portfolio-2.webp',
-            'assets/images/portfolio-4.webp',
-            'assets/images/portfolio-5.webp'
+            'assets/images/finance-tracker-1.jpeg',
+            'assets/images/finance-tracker-2.jpeg',
+            'assets/images/finance-tracker-3.jpeg',
+            'assets/images/finance-tracker-4.jpeg',
+            'assets/images/finance-tracker-5.jpeg'
         ],
-        technologies: ['React', 'TypeScript', 'REST API', 'CSS3', 'Vite'],
+        technologies: [
+            'Kotlin',
+            'Jetpack Compose',
+            'MVVM',
+            'Clean Architecture',
+            'SQLite',
+            'WorkManager'
+        ],
         description:
-            'A modern web application for browsing and managing movie collections with a sleek user interface.',
+            'Privacy-centric Android finance tracking app with intelligent SMS parsing and automated transaction categorization.',
         overview:
-            'This web application provides users with an intuitive interface to browse, search, and manage their movie collections. Built with modern frontend technologies, it offers a responsive design that works seamlessly across all devices.',
+            'Architected a GDPR/DPDP-compliant Android application using MVVM and Clean Architecture with Jetpack Compose and Kotlin Flow, ensuring 100% reactive data streams and zero-cloud-dependency for complete user privacy.',
         challenge:
-            'The main challenge was creating a fast, responsive interface that could handle large datasets while maintaining smooth animations and transitions. Additionally, implementing efficient search and filtering mechanisms was crucial for user experience.',
+            'Building an intelligent transaction tracking system that automatically parses banking SMS without compromising user privacy, while implementing complex debt settlement algorithms and maintaining >80% test coverage.',
         solution:
-            'Implemented virtual scrolling for large lists, used React Query for efficient data caching, and created a modular component architecture for maintainability. The search functionality uses debouncing to optimize API calls.',
+            'Engineered an intelligent SMS Parsing Engine with regex-based pattern matching and merchant normalization to automate transaction categorization for major Indian banks (HDFC, ICICI, SBI). Optimized group debt resolution by implementing a Greedy Settlement Algorithm, reducing transaction complexity from O(N²) to O(N).',
         features: [
-            'Advanced search and filtering',
-            'Responsive design',
-            'User watchlist management',
-            'Movie recommendations',
-            'Rating system',
-            'Dark/Light mode'
+            'Intelligent SMS parsing for automatic transaction detection',
+            'Greedy Settlement Algorithm for debt optimization',
+            'MVVM + Clean Architecture (Domain/Data/Presentation)',
+            '180+ unit tests across 13 test suites',
+            'Zero-cloud dependency for GDPR compliance',
+            'Custom UI components with keyboard-aware bottom sheets',
+            'WorkManager background sync with periodic reminders'
         ],
-        liveUrl: '#',
-        githubUrl: '#'
+        githubUrl: 'https://github.com/akshay-baiplawat/Finance-Tracker',
+        downloadUrl: 'assets/Finance_Tracker.apk'
     },
     {
-        id: 'learn-algo',
-        title: 'Learn ALGO',
+        id: 'jarvis-ai',
+        title: 'JARVIS: Multimodal AI Voice Assistant',
         category: 'filter-development',
-        categoryLabel: 'Algorithm Visualization',
-        date: 'March 2024',
-        client: 'Educational Platform',
+        categoryLabel: 'AI Application',
+        date: 'January 2025',
+        client: 'Personal Project',
         mainImage: 'assets/images/portfolio-10.webp',
         galleryImages: [
             'assets/images/portfolio-10.webp',
@@ -71,98 +85,36 @@ export const projects: ProjectData[] = [
             'assets/images/portfolio-7.webp',
             'assets/images/portfolio-8.webp'
         ],
-        technologies: ['JavaScript', 'D3.js', 'HTML5 Canvas', 'CSS Animations', 'Node.js'],
+        technologies: ['Python', 'LiveKit Agents SDK', 'Gemini 2.5 Flash', 'WebRTC', 'Mem0', 'MCP'],
         description:
-            'Interactive platform for learning data structures and algorithms through visual demonstrations.',
+            'Real-time multimodal AI voice assistant with vision capabilities and persistent memory.',
         overview:
-            'Learn ALGO is an educational platform designed to make learning data structures and algorithms engaging and intuitive. Through interactive visualizations, users can see how different algorithms work step by step.',
+            'Architected a production-grade multimodal agent using LiveKit Agents SDK and WebRTC, orchestrating a low-latency STT → LLM → TTS pipeline with <1s perceived response time through Voice Activity Detection (VAD) and asynchronous thinking-state feedback.',
         challenge:
-            'Creating smooth, educational animations that accurately represent algorithm execution while being easy to understand for beginners was the primary challenge. Balancing performance with visual complexity required careful optimization.',
+            'Creating a real-time voice assistant that can process visual context from asynchronous video streams while maintaining conversational flow and personalizing responses across sessions required complex pipeline orchestration and error handling.',
         solution:
-            'Used D3.js for complex visualizations and HTML5 Canvas for performance-intensive animations. Implemented a step-by-step execution mode allowing users to control the visualization speed and pause at any point.',
+            'Engineered a custom VisionAssistant class to process asynchronous video streams, automatically injecting real-time visual context into Gemini 2.5 Flash for vision-grounded reasoning. Integrated persistent memory layer using Mem0 and vector similarity search for cross-session personalization. Developed production-grade tool suite with defensive error handling for 6+ external APIs managing 8+ exception types.',
         features: [
-            'Step-by-step visualization',
-            'Multiple algorithm categories',
-            'Code alongside visualization',
-            'Performance comparisons',
-            'Interactive tutorials',
-            'Progress tracking'
+            'Real-time STT → LLM → TTS pipeline with <1s latency',
+            'Asynchronous video stream processing for visual context',
+            'Persistent memory with Mem0 and vector similarity search',
+            'Model Context Protocol (MCP) for Google Calendar and Gmail',
+            'Voice Activity Detection with thinking-state feedback',
+            'Test-Driven Development with LLM-as-judge evaluation',
+            '99% session uptime with defensive error handling'
         ],
-        liveUrl: '#',
-        githubUrl: '#'
+        githubUrl: 'https://github.com/akshay-baiplawat/jarvis-agent',
+        linkedinUrl: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7372653576822669312',
+        linkedinEmbedUrl:
+            'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7372653576822669312'
     },
     {
-        id: 'employee-management-system',
-        title: 'Employee Management System',
-        category: 'filter-photography',
-        categoryLabel: 'Console Application',
-        date: 'December 2023',
-        client: 'Academic Project',
-        mainImage: 'assets/images/portfolio-7.webp',
-        galleryImages: [
-            'assets/images/portfolio-7.webp',
-            'assets/images/portfolio-8.webp',
-            'assets/images/portfolio-10.webp',
-            'assets/images/portfolio-11.webp'
-        ],
-        technologies: ['C++', 'OOP', 'File I/O', 'Data Structures', 'STL'],
-        description:
-            'Console-based application for managing employee records using object-oriented programming principles.',
-        overview:
-            'A comprehensive employee management system built in C++ that demonstrates strong understanding of object-oriented programming concepts. The system handles CRUD operations for employee data with file persistence.',
-        challenge:
-            'Designing a clean, maintainable architecture using OOP principles while ensuring data integrity and efficient file operations was challenging. Memory management and preventing data corruption during file operations required careful attention.',
-        solution:
-            'Implemented a modular design using classes for different entities, used RAII principles for resource management, and created a robust file handling system with backup mechanisms to prevent data loss.',
-        features: [
-            'Employee CRUD operations',
-            'Search and filter functionality',
-            'Data persistence to files',
-            'Input validation',
-            'Report generation',
-            'Backup system'
-        ]
-    },
-    {
-        id: 'duck-hunt-game',
-        title: 'Duck-Hunt Game',
-        category: 'filter-marketing',
-        categoryLabel: 'Game Development',
-        date: 'August 2023',
-        client: 'Personal Project',
-        mainImage: 'assets/images/portfolio-4.webp',
-        galleryImages: [
-            'assets/images/portfolio-4.webp',
-            'assets/images/portfolio-5.webp',
-            'assets/images/portfolio-1.webp',
-            'assets/images/portfolio-2.webp'
-        ],
-        technologies: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'Web Audio API', 'Sprite Animation'],
-        description:
-            'Classic arcade-style game recreation demonstrating game development skills and UI design.',
-        overview:
-            'A modern recreation of the classic Duck Hunt arcade game, built entirely with web technologies. Features smooth animations, sound effects, and responsive controls for an authentic gaming experience.',
-        challenge:
-            'Recreating the nostalgic feel of the original game while adding modern touches was the main challenge. Implementing smooth sprite animations and accurate hit detection required precise timing and collision algorithms.',
-        solution:
-            'Used HTML5 Canvas for rendering with requestAnimationFrame for smooth 60fps gameplay. Implemented a sprite sheet animation system and polygon-based hit detection for accurate shooting mechanics.',
-        features: [
-            'Smooth sprite animations',
-            'Sound effects',
-            'Score tracking',
-            'Multiple difficulty levels',
-            'Responsive controls',
-            'High score leaderboard'
-        ],
-        liveUrl: '#'
-    },
-    {
-        id: 'zoho-assist-agent',
-        title: 'ZOHO Assist Windows Agent',
+        id: 'portfolio-website',
+        title: 'Professional Engineering Portfolio',
         category: 'filter-ui',
-        categoryLabel: 'Windows Software',
-        date: 'June 2024',
-        client: 'ZOHO Corporation',
+        categoryLabel: 'Web Application',
+        date: 'November 2024',
+        client: 'Personal Project',
         mainImage: 'assets/images/portfolio-2.webp',
         galleryImages: [
             'assets/images/portfolio-2.webp',
@@ -170,124 +122,179 @@ export const projects: ProjectData[] = [
             'assets/images/portfolio-10.webp',
             'assets/images/portfolio-11.webp'
         ],
-        technologies: ['C++', 'Win32 API', 'Windows Services', 'Socket Programming', 'Registry'],
-        description: 'Professional remote access solution developed for enterprise environments.',
-        overview:
-            'A Windows-native remote access agent developed as part of the ZOHO Assist suite. This software enables secure remote desktop connections, file transfers, and system diagnostics for IT support teams.',
-        challenge:
-            'Building a reliable Windows service that operates seamlessly across different Windows versions while maintaining security and performance standards. Handling various network configurations and firewall rules was particularly challenging.',
-        solution:
-            'Developed using modern C++ with Win32 APIs for deep system integration. Implemented a robust reconnection mechanism, encrypted communication channels, and efficient screen capture algorithms.',
-        features: [
-            'Remote desktop access',
-            'Secure file transfer',
-            'System diagnostics',
-            'Multi-monitor support',
-            'Session recording',
-            'Unattended access'
-        ],
-        liveUrl: 'https://www.zoho.com/assist/'
-    },
-    {
-        id: 'session-audit-feature',
-        title: 'Session Audit Feature',
-        category: 'filter-development',
-        categoryLabel: 'Performance Optimization',
-        date: 'September 2024',
-        client: 'ZOHO Corporation',
-        mainImage: 'assets/images/portfolio-11.webp',
-        galleryImages: [
-            'assets/images/portfolio-11.webp',
-            'assets/images/portfolio-10.webp',
-            'assets/images/portfolio-2.webp',
-            'assets/images/portfolio-7.webp'
-        ],
-        technologies: ['C++', 'Performance Profiling', 'Windows API', 'SQLite', 'Logging'],
+        technologies: ['TypeScript', 'Vite', 'Bootstrap', 'GitHub Actions', 'Vitest', 'Trivy'],
         description:
-            'Performance optimization feature for enterprise software, improving system efficiency.',
+            'High-performance portfolio platform with enterprise-grade CI/CD and security auditing.',
         overview:
-            'A comprehensive session auditing system that tracks and analyzes remote support sessions. This feature provides detailed insights into session performance, user activities, and system resource usage.',
+            'Architected a high-performance platform using TypeScript 5.4 and Vite, implementing a Singleton-based OOP architecture and Plugin Facade pattern to manage 7+ integrations with explicit memory-leak prevention.',
         challenge:
-            'Implementing detailed logging without impacting the performance of live remote sessions was critical. Managing large volumes of audit data while ensuring quick retrieval for reporting required careful database design.',
+            'Building a production-ready portfolio with automated quality gates, security scanning, and performance monitoring while maintaining 95+ Lighthouse scores and >80% code coverage required comprehensive CI/CD orchestration.',
         solution:
-            'Created an asynchronous logging system with buffered writes to minimize I/O impact. Used SQLite with optimized indexes for efficient data storage and retrieval. Implemented data compression for long-term storage.',
+            'Engineered a 4-stage parallelized CI/CD pipeline via GitHub Actions, reducing deployment time by 40% while automating production-grade security audits via Trivy vulnerability scanning. Optimized system performance to achieve Lighthouse scores of 95+ utilizing Vitest for >80% code coverage and maintaining a <1.5s First Contentful Paint (FCP).',
         features: [
-            'Real-time session tracking',
-            'Performance metrics',
-            'Activity timeline',
-            'Export capabilities',
-            'Compliance reporting',
-            'Resource usage analysis'
-        ]
-    },
-    {
-        id: 'nature-collection',
-        title: 'Nature Collection',
-        category: 'filter-photography',
-        categoryLabel: 'Photography',
-        date: 'October 2024',
-        client: 'Personal Portfolio',
-        mainImage: 'assets/images/portfolio-8.webp',
-        galleryImages: [
-            'assets/images/portfolio-8.webp',
-            'assets/images/portfolio-7.webp',
-            'assets/images/portfolio-5.webp',
-            'assets/images/portfolio-4.webp'
+            'Singleton-based OOP with Plugin Facade pattern',
+            '4-stage parallelized CI/CD pipeline',
+            'Trivy security vulnerability scanning',
+            'Lighthouse CI with 95+ scores',
+            '>80% test coverage with Vitest',
+            '<1.5s First Contentful Paint performance',
+            'Memory leak prevention with explicit cleanup'
         ],
-        technologies: ['Photography', 'Lightroom', 'Photoshop', 'Color Grading', 'Composition'],
-        description: 'Photography portfolio showcasing technical composition and artistic vision.',
-        overview:
-            'A curated collection of nature photography capturing the beauty of natural landscapes and wildlife. Each photograph demonstrates technical proficiency in composition, lighting, and post-processing.',
-        challenge:
-            'Capturing the essence of nature while dealing with unpredictable lighting conditions and wildlife behavior. Achieving consistent quality across different environments and seasons required adaptability.',
-        solution:
-            'Developed a systematic approach to photography including golden hour planning, use of ND filters, and a consistent post-processing workflow in Lightroom to maintain visual cohesion across the collection.',
-        features: [
-            'Landscape photography',
-            'Wildlife captures',
-            'Golden hour shots',
-            'Macro photography',
-            'Long exposure',
-            'HDR techniques'
-        ]
+        liveUrl: 'https://akshay-baiplawat.github.io/portfolio-website/',
+        githubUrl: 'https://github.com/akshay-baiplawat/portfolio-website',
+        livePreviewUrl: 'https://akshay-baiplawat.github.io/portfolio-website/'
     },
     {
-        id: 'brand-strategy',
-        title: 'Brand Strategy',
-        category: 'filter-marketing',
-        categoryLabel: 'Marketing',
-        date: 'November 2024',
-        client: 'Freelance Project',
-        mainImage: 'assets/images/portfolio-5.webp',
+        id: 'employee-management',
+        title: 'Employee Management Console Application',
+        category: 'filter-development',
+        categoryLabel: 'Desktop Application',
+        date: 'March 2022',
+        client: 'Academic Project',
+        mainImage: 'assets/images/portfolio-4.webp',
         galleryImages: [
-            'assets/images/portfolio-5.webp',
             'assets/images/portfolio-4.webp',
-            'assets/images/portfolio-1.webp',
+            'assets/images/portfolio-5.webp',
+            'assets/images/portfolio-7.webp',
             'assets/images/portfolio-8.webp'
         ],
+        technologies: ['C++', 'OOP', 'Windows C++', 'CMake', 'Data Structures', 'Algorithms'],
+        description:
+            'Comprehensive console-based application for efficient employee data management with advanced search capabilities.',
+        overview:
+            'Developed a robust employee management system using C++ with object-oriented design principles, featuring efficient data retrieval and management through optimized file-based storage.',
+        challenge:
+            'Creating an efficient console application that could handle complex employee data queries with multiple filter criteria while maintaining fast search performance and data integrity without a database system.',
+        solution:
+            'Implemented advanced search capabilities with multiple filters using optimized data structures and algorithms. Designed a text-file-based persistence layer with efficient indexing for quick data sourcing and retrieval, enabling complex queries without database overhead.',
+        features: [
+            'Object-oriented architecture with modular design',
+            'Advanced search with multi-criteria filtering',
+            'Optimized text-file data persistence',
+            'Efficient indexing for fast retrieval',
+            'CMake build system for cross-platform support',
+            'Console-based interactive UI',
+            'Data validation and integrity checks'
+        ],
+        githubUrl: 'https://github.com/akshay-baiplawat'
+    },
+    {
+        id: 'movie-list',
+        title: 'Movie List',
+        category: 'filter-ui',
+        categoryLabel: 'Web Application',
+        date: 'June 2022',
+        client: 'Personal Project',
+        mainImage: 'assets/images/portfolio-3.webp',
+        galleryImages: [
+            'assets/images/portfolio-3.webp',
+            'assets/images/portfolio-2.webp',
+            'assets/images/portfolio-1.webp',
+            'assets/images/portfolio-10.webp'
+        ],
         technologies: [
-            'Figma',
-            'Adobe Illustrator',
-            'Brand Guidelines',
-            'UI/UX Design',
-            'Marketing'
+            'React',
+            'React Router',
+            'Material UI',
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'OMDB API'
         ],
         description:
-            'Professional brand development focusing on visual identity and strategic marketing.',
+            'Captivating movie listing website with seamless search functionality and detailed information on movies and web series.',
         overview:
-            'A comprehensive brand strategy project that includes logo design, color palette development, typography selection, and brand guidelines documentation for a startup company.',
+            'Built a dynamic React-based movie discovery platform integrated with OMDB API, featuring a polished Material UI design and smooth client-side routing for an enhanced user experience.',
         challenge:
-            "Creating a unique brand identity that stands out in a competitive market while accurately representing the company's values and target audience. Balancing creativity with practical application was key.",
+            'Designing an intuitive movie discovery interface that handles asynchronous API data fetching while providing real-time search feedback and maintaining responsive performance across devices.',
         solution:
-            'Conducted thorough market research and competitor analysis. Developed multiple concept directions before refining the final identity. Created extensive brand guidelines ensuring consistent application.',
+            'Integrated OMDB API for comprehensive movie and TV series data retrieval. Implemented React Router for seamless navigation between pages and leveraged Material UI components for a consistent, responsive design. Added debounced search to optimize API calls and improve user experience.',
         features: [
-            'Logo design system',
-            'Color palette',
-            'Typography guidelines',
-            'Brand voice',
-            'Marketing materials',
-            'Social media templates'
-        ]
+            'Real-time movie and web series search',
+            'OMDB API integration for comprehensive data',
+            'Material UI for polished, responsive design',
+            'React Router for smooth client-side navigation',
+            'Detailed movie information pages',
+            'Optimized API calls with debouncing',
+            'Mobile-responsive layout'
+        ],
+        liveUrl: 'https://movies-list-akshay-baiplawat.netlify.app/',
+        githubUrl: 'https://github.com/akshay-baiplawat/Movie-List',
+        livePreviewUrl: 'https://movies-list-akshay-baiplawat.netlify.app/'
+    },
+    {
+        id: 'learn-algo',
+        title: 'Learn ALGO',
+        category: 'filter-ui',
+        categoryLabel: 'Web Application',
+        date: 'September 2022',
+        client: 'Educational Project',
+        mainImage: 'assets/images/portfolio-6.webp',
+        galleryImages: [
+            'assets/images/portfolio-6.webp',
+            'assets/images/portfolio-5.webp',
+            'assets/images/portfolio-4.webp',
+            'assets/images/portfolio-3.webp'
+        ],
+        technologies: [
+            'React',
+            'p5.js',
+            'JavaScript',
+            'Data Structures',
+            'Algorithms',
+            'Canvas API'
+        ],
+        description:
+            'Immersive web application for visualizing and learning algorithms through interactive animations.',
+        overview:
+            'Created an educational platform that brings algorithms to life through visual animations using React and p5.js, helping students understand complex algorithmic concepts through interactive visualizations.',
+        challenge:
+            'Translating abstract algorithmic concepts into engaging visual representations that accurately demonstrate step-by-step execution while maintaining 60fps performance for smooth animations.',
+        solution:
+            'Leveraged p5.js canvas rendering for high-performance visualizations. Implemented multiple algorithm categories including pathfinding (Dijkstra, A*), searching (Linear, Binary), sorting (Quick, Merge, Insertion, Bubble, Selection), and maze generation with step-by-step animation controls.',
+        features: [
+            'Multiple algorithm categories (pathfinding, search, sort)',
+            'Step-by-step execution visualization',
+            'Interactive controls (play, pause, speed adjustment)',
+            'Dijkstra and A* pathfinding algorithms',
+            'Linear and Binary search demonstrations',
+            'Five sorting algorithms with comparisons',
+            'Maze generation with randomized algorithms',
+            'Smooth 60fps canvas animations with p5.js'
+        ],
+        liveUrl: 'https://www.youtube.com/watch?v=iKYWDnp2-kI',
+        githubUrl: 'https://github.com/akshay-baiplawat/Learn-Algo',
+        youtubeEmbedUrl: 'https://www.youtube.com/embed/iKYWDnp2-kI?si=5-1XsFRJBUi5W7Bx'
+    },
+    {
+        id: 'duck-hunt',
+        title: 'Duck-Hunt',
+        category: 'filter-development',
+        categoryLabel: 'Game Development',
+        date: 'April 2022',
+        client: 'Academic Project',
+        mainImage: 'assets/images/duck-hunt.png',
+        galleryImages: ['assets/images/duck-hunt.png'],
+        technologies: ['Java', 'ACM Graphics', 'Multi-threading', 'OOP', 'Game Mechanics'],
+        description:
+            'Single-player arcade shooting game inspired by the classic 80s duck hunt with dynamic difficulty.',
+        overview:
+            'Developed a retro-style arcade game using core Java and ACM Graphics library, featuring multi-threaded game mechanics for smooth concurrent animations and responsive player interactions.',
+        challenge:
+            "Implementing smooth concurrent animations for multiple moving targets while handling user input, collision detection, and progressive difficulty scaling, all within Java's single-threaded graphics constraints.",
+        solution:
+            'Utilized multi-threading to manage independent duck movements and animations concurrently. Implemented dynamic difficulty scaling with varying duck health, speed, and spawn patterns. Designed an interactive UI with 2D graphics using ACM library for classic arcade aesthetics.',
+        features: [
+            'Classic arcade-style shooting gameplay',
+            'Multi-threaded game mechanics for smooth animations',
+            'Dynamic difficulty with varying duck attributes',
+            'Health and speed progression system',
+            'Randomized duck spawn patterns',
+            'Interactive 2D graphics with ACM library',
+            'Collision detection and scoring system',
+            'Retro 80s-inspired visual design'
+        ],
+        githubUrl: 'https://github.com/akshay-baiplawat'
     }
 ];
 
