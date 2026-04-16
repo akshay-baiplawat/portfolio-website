@@ -3,6 +3,22 @@
  * Contains all project information for the portfolio details modal
  */
 
+// Import all project images so Vite can process them correctly
+import financeTracker1 from '../../assets/images/finance-tracker-1.jpeg';
+import financeTracker2 from '../../assets/images/finance-tracker-2.jpeg';
+import financeTracker3 from '../../assets/images/finance-tracker-3.jpeg';
+import financeTracker4 from '../../assets/images/finance-tracker-4.jpeg';
+import financeTracker5 from '../../assets/images/finance-tracker-5.jpeg';
+import portfolio1 from '../../assets/images/portfolio-1.webp';
+import portfolio2 from '../../assets/images/portfolio-2.webp';
+import portfolio4 from '../../assets/images/portfolio-4.webp';
+import portfolio5 from '../../assets/images/portfolio-5.webp';
+import portfolio7 from '../../assets/images/portfolio-7.webp';
+import portfolio8 from '../../assets/images/portfolio-8.webp';
+import portfolio10 from '../../assets/images/portfolio-10.webp';
+import portfolio11 from '../../assets/images/portfolio-11.webp';
+import duckHunt from '../../assets/images/duck-hunt.png';
+
 export interface ProjectData {
     id: string;
     title: string;
@@ -35,13 +51,13 @@ export const projects: ProjectData[] = [
         categoryLabel: 'Mobile Application',
         date: 'December 2024',
         client: 'Personal Project',
-        mainImage: 'assets/images/finance-tracker-1.jpeg',
+        mainImage: financeTracker1,
         galleryImages: [
-            'assets/images/finance-tracker-1.jpeg',
-            'assets/images/finance-tracker-2.jpeg',
-            'assets/images/finance-tracker-3.jpeg',
-            'assets/images/finance-tracker-4.jpeg',
-            'assets/images/finance-tracker-5.jpeg'
+            financeTracker1,
+            financeTracker2,
+            financeTracker3,
+            financeTracker4,
+            financeTracker5
         ],
         technologies: [
             'Kotlin',
@@ -78,12 +94,12 @@ export const projects: ProjectData[] = [
         categoryLabel: 'AI Application',
         date: 'January 2025',
         client: 'Personal Project',
-        mainImage: 'assets/images/portfolio-10.webp',
+        mainImage: portfolio10,
         galleryImages: [
-            'assets/images/portfolio-10.webp',
-            'assets/images/portfolio-11.webp',
-            'assets/images/portfolio-7.webp',
-            'assets/images/portfolio-8.webp'
+            portfolio10,
+            portfolio11,
+            portfolio7,
+            portfolio8
         ],
         technologies: ['Python', 'LiveKit Agents SDK', 'Gemini 2.5 Flash', 'WebRTC', 'Mem0', 'MCP'],
         description:
@@ -115,12 +131,12 @@ export const projects: ProjectData[] = [
         categoryLabel: 'Web Application',
         date: 'November 2024',
         client: 'Personal Project',
-        mainImage: 'assets/images/portfolio-2.webp',
+        mainImage: portfolio2,
         galleryImages: [
-            'assets/images/portfolio-2.webp',
-            'assets/images/portfolio-1.webp',
-            'assets/images/portfolio-10.webp',
-            'assets/images/portfolio-11.webp'
+            portfolio2,
+            portfolio1,
+            portfolio10,
+            portfolio11
         ],
         technologies: ['TypeScript', 'Vite', 'Bootstrap', 'GitHub Actions', 'Vitest', 'Trivy'],
         description:
@@ -151,12 +167,12 @@ export const projects: ProjectData[] = [
         categoryLabel: 'Desktop Application',
         date: 'March 2022',
         client: 'Academic Project',
-        mainImage: 'assets/images/portfolio-4.webp',
+        mainImage: portfolio4,
         galleryImages: [
-            'assets/images/portfolio-4.webp',
-            'assets/images/portfolio-5.webp',
-            'assets/images/portfolio-7.webp',
-            'assets/images/portfolio-8.webp'
+            portfolio4,
+            portfolio5,
+            portfolio7,
+            portfolio8
         ],
         technologies: ['C++', 'OOP', 'Windows C++', 'CMake', 'Data Structures', 'Algorithms'],
         description:
@@ -185,13 +201,8 @@ export const projects: ProjectData[] = [
         categoryLabel: 'Web Application',
         date: 'June 2022',
         client: 'Personal Project',
-        mainImage: 'assets/images/portfolio-3.webp',
-        galleryImages: [
-            'assets/images/portfolio-3.webp',
-            'assets/images/portfolio-2.webp',
-            'assets/images/portfolio-1.webp',
-            'assets/images/portfolio-10.webp'
-        ],
+        mainImage: portfolio1,
+        galleryImages: [portfolio1, portfolio2, portfolio10, portfolio11],
         technologies: [
             'React',
             'React Router',
@@ -229,13 +240,8 @@ export const projects: ProjectData[] = [
         categoryLabel: 'Web Application',
         date: 'September 2022',
         client: 'Educational Project',
-        mainImage: 'assets/images/portfolio-6.webp',
-        galleryImages: [
-            'assets/images/portfolio-6.webp',
-            'assets/images/portfolio-5.webp',
-            'assets/images/portfolio-4.webp',
-            'assets/images/portfolio-3.webp'
-        ],
+        mainImage: portfolio5,
+        galleryImages: [portfolio5, portfolio4, portfolio7, portfolio8],
         technologies: [
             'React',
             'p5.js',
@@ -273,8 +279,8 @@ export const projects: ProjectData[] = [
         categoryLabel: 'Game Development',
         date: 'April 2022',
         client: 'Academic Project',
-        mainImage: 'assets/images/duck-hunt.png',
-        galleryImages: ['assets/images/duck-hunt.png'],
+        mainImage: duckHunt,
+        galleryImages: [duckHunt],
         technologies: ['Java', 'ACM Graphics', 'Multi-threading', 'OOP', 'Game Mechanics'],
         description:
             'Single-player arcade shooting game inspired by the classic 80s duck hunt with dynamic difficulty.',
