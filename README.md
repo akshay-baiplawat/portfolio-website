@@ -2,8 +2,8 @@
 
 Modern, responsive portfolio website built with TypeScript and Vite. Features enterprise-grade architecture, comprehensive testing, and automated CI/CD deployment.
 
-![CI/CD Status](https://github.com/akshaybaiplawat/portfolio-website/workflows/CI/CD%20Pipeline/badge.svg)
-![Coverage](https://codecov.io/gh/akshaybaiplawat/portfolio-website/branch/main/graph/badge.svg)
+![CI/CD Status](https://github.com/akshay-baiplawat/portfolio-website/workflows/CI/CD%20Pipeline/badge.svg)
+![Coverage](https://codecov.io/gh/akshay-baiplawat/portfolio-website/branch/main/graph/badge.svg)
 ![Security](https://img.shields.io/badge/security-audited-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -24,7 +24,7 @@ Modern, responsive portfolio website built with TypeScript and Vite. Features en
 
 ```bash
 # Clone and install
-git clone https://github.com/akshaybaiplawat/portfolio-website.git
+git clone https://github.com/akshay-baiplawat/portfolio-website.git
 cd portfolio-website
 npm install
 
