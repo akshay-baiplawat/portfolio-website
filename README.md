@@ -7,6 +7,10 @@ A modern, responsive portfolio website built with TypeScript, HTML5, CSS3, and i
 ![Security](https://img.shields.io/badge/security-audited-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
+## 🌐 Live Demo
+
+**Visit the live site:** [https://akshay-baiplawat.github.io/portfolio-website/](https://akshay-baiplawat.github.io/portfolio-website/)
+
 ## ✨ Features
 
 ### Core Features
