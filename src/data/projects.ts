@@ -9,6 +9,7 @@ import financeTracker2 from '../../assets/images/finance-tracker-2.jpeg';
 import financeTracker3 from '../../assets/images/finance-tracker-3.jpeg';
 import financeTracker4 from '../../assets/images/finance-tracker-4.jpeg';
 import financeTracker5 from '../../assets/images/finance-tracker-5.jpeg';
+import jarvisAI from '../../assets/images/JARVIS_AI.png';
 import portfolio1 from '../../assets/images/portfolio-1.webp';
 import portfolio2 from '../../assets/images/portfolio-2.webp';
 import portfolio4 from '../../assets/images/portfolio-4.webp';
@@ -94,8 +95,8 @@ export const projects: ProjectData[] = [
         categoryLabel: 'AI Application',
         date: 'January 2025',
         client: 'Personal Project',
-        mainImage: portfolio10,
-        galleryImages: [portfolio10, portfolio11, portfolio7, portfolio8],
+        mainImage: jarvisAI,
+        galleryImages: [jarvisAI, portfolio11, portfolio7, portfolio8],
         technologies: ['Python', 'LiveKit Agents SDK', 'Gemini 2.5 Flash', 'WebRTC', 'Mem0', 'MCP'],
         description:
             'Real-time multimodal AI voice assistant with vision capabilities and persistent memory.',

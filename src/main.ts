@@ -364,14 +364,20 @@ class PortfolioApplication implements PortfolioApp {
         const sliderWrapper = document.getElementById('portfolioSliderWrapper');
         const sliderContainer = document.querySelector('.portfolio-details-slider');
         if (sliderWrapper && sliderContainer) {
-            // If project has LinkedIn embed, show only the video
-            if (project.linkedinEmbedUrl) {
+            // If project has LinkedIn embed, show video thumbnail with play button
+            if (project.linkedinEmbedUrl && project.linkedinUrl) {
                 sliderContainer.classList.add('video-only');
                 sliderWrapper.innerHTML = `
                     <div class="swiper-slide">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="${project.linkedinEmbedUrl}" frameborder="0" allowfullscreen="" title="${project.title} Demo"></iframe>
-                        </div>
+                        <a href="${project.linkedinUrl}" target="_blank" rel="noopener noreferrer" class="video-thumbnail-link" style="position: relative; display: block;">
+                            <img src="${project.mainImage}" alt="${project.title}" class="img-fluid" style="width: 100%; height: auto;">
+                            <div class="play-button-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10;">
+                                <i class="bi bi-play-circle-fill" style="font-size: 100px; color: rgba(255, 255, 255, 0.95); text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);"></i>
+                            </div>
+                            <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.8); padding: 10px 20px; border-radius: 5px; text-align: center; z-index: 10;">
+                                <p style="color: white; margin: 0; font-size: 14px;">Click to watch video on LinkedIn</p>
+                            </div>
+                        </a>
                     </div>`;
                 // Hide navigation buttons for video-only
                 const prevBtn = sliderContainer.querySelector('.swiper-button-prev') as HTMLElement;
