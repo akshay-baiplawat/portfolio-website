@@ -211,9 +211,10 @@ class PortfolioApplication implements PortfolioApp {
                 new Typed('.typed', {
                     strings: typedItems.split(',').map(item => item.trim()),
                     loop: true,
-                    typeSpeed: 100,
-                    backSpeed: 50,
-                    backDelay: 2000
+                    typeSpeed: 80,
+                    backSpeed: 40,
+                    backDelay: 3000,
+                    startDelay: 500
                 });
             }
         }
@@ -360,15 +361,72 @@ class PortfolioApplication implements PortfolioApp {
     private populateModalContent(project: ProjectData): void {
         this.currentProjectId = project.id;
 
-        // Update slider images
+        // Update slider images or video
         const sliderWrapper = document.getElementById('portfolioSliderWrapper');
-        if (sliderWrapper) {
-            sliderWrapper.innerHTML = project.galleryImages
-                .map(
-                    img =>
-                        `<div class="swiper-slide"><img src="${img}" alt="${project.title}" class="img-fluid"></div>`
-                )
-                .join('');
+        const sliderContainer = document.querySelector('.portfolio-details-slider');
+        if (sliderWrapper && sliderContainer) {
+            // If project has LinkedIn embed, show only the video
+            if (project.linkedinEmbedUrl) {
+                sliderContainer.classList.add('video-only');
+                sliderWrapper.innerHTML = `
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="${project.linkedinEmbedUrl}" frameborder="0" allowfullscreen="" title="${project.title} Demo"></iframe>
+                        </div>
+                    </div>`;
+                // Hide navigation buttons for video-only
+                const prevBtn = sliderContainer.querySelector('.swiper-button-prev') as HTMLElement;
+                const nextBtn = sliderContainer.querySelector('.swiper-button-next') as HTMLElement;
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            } else if (project.youtubeEmbedUrl) {
+                // Show YouTube video embed
+                sliderContainer.classList.add('video-only');
+                sliderWrapper.innerHTML = `
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="${project.youtubeEmbedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="${project.title} Demo"></iframe>
+                        </div>
+                    </div>`;
+                // Hide navigation buttons for video-only
+                const prevBtn = sliderContainer.querySelector('.swiper-button-prev') as HTMLElement;
+                const nextBtn = sliderContainer.querySelector('.swiper-button-next') as HTMLElement;
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            } else if (project.livePreviewUrl) {
+                // Show live preview iframe
+                sliderContainer.classList.add('video-only');
+                sliderWrapper.innerHTML = `
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-4x3">
+                            <iframe src="${project.livePreviewUrl}" frameborder="0" title="${project.title} Live Preview" loading="lazy"></iframe>
+                        </div>
+                    </div>`;
+                // Hide navigation buttons for preview-only
+                const prevBtn = sliderContainer.querySelector('.swiper-button-prev') as HTMLElement;
+                const nextBtn = sliderContainer.querySelector('.swiper-button-next') as HTMLElement;
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            } else if (project.id === 'employee-management' || project.id === 'duck-hunt') {
+                // Show only main image for these projects (no slideshow)
+                sliderContainer.classList.add('video-only');
+                sliderWrapper.innerHTML = `<div class="swiper-slide"><img src="${project.mainImage}" alt="${project.title}" class="img-fluid"></div>`;
+                // Hide navigation buttons
+                const prevBtn = sliderContainer.querySelector('.swiper-button-prev') as HTMLElement;
+                const nextBtn = sliderContainer.querySelector('.swiper-button-next') as HTMLElement;
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            } else {
+                sliderContainer.classList.remove('video-only');
+                sliderWrapper.innerHTML = project.galleryImages
+                    .map(img => `<div class="swiper-slide"><img src="${img}" alt="${project.title}" class="img-fluid"></div>`)
+                    .join('');
+                // Show navigation buttons for image gallery
+                const prevBtn = sliderContainer.querySelector('.swiper-button-prev') as HTMLElement;
+                const nextBtn = sliderContainer.querySelector('.swiper-button-next') as HTMLElement;
+                if (prevBtn) prevBtn.style.display = 'block';
+                if (nextBtn) nextBtn.style.display = 'block';
+            }
         }
 
         // Update technology tags
@@ -433,9 +491,22 @@ class PortfolioApplication implements PortfolioApp {
         // Update action buttons
         const liveUrlBtn = document.getElementById('portfolioLiveUrl') as HTMLAnchorElement;
         if (liveUrlBtn) {
-            if (project.liveUrl && project.liveUrl !== '#') {
-                liveUrlBtn.href = project.liveUrl;
+            // Prioritize linkedinUrl over liveUrl if available
+            const displayUrl = project.linkedinUrl || project.liveUrl;
+            if (displayUrl && displayUrl !== '#') {
+                liveUrlBtn.href = displayUrl;
                 liveUrlBtn.style.display = 'inline-block';
+                // Update button text based on URL type
+                const linkText = liveUrlBtn.querySelector('span');
+                if (linkText) {
+                    if (project.linkedinUrl) {
+                        linkText.textContent = 'View LinkedIn Post';
+                    } else if (project.liveUrl?.includes('youtube.com') || project.liveUrl?.includes('youtu.be')) {
+                        linkText.textContent = 'View Demo Video';
+                    } else {
+                        linkText.textContent = 'View Live Project';
+                    }
+                }
             } else {
                 liveUrlBtn.style.display = 'none';
             }
@@ -448,6 +519,27 @@ class PortfolioApplication implements PortfolioApp {
                 githubBtn.style.display = 'inline-block';
             } else {
                 githubBtn.style.display = 'none';
+            }
+        }
+
+        const linkedinBtn = document.getElementById('portfolioLinkedinUrl') as HTMLAnchorElement;
+        if (linkedinBtn) {
+            if (project.linkedinUrl && project.linkedinUrl !== '#') {
+                linkedinBtn.href = project.linkedinUrl;
+                linkedinBtn.style.display = 'inline-block';
+            } else {
+                linkedinBtn.style.display = 'none';
+            }
+        }
+
+        const downloadBtn = document.getElementById('portfolioDownloadUrl') as HTMLAnchorElement;
+        if (downloadBtn) {
+            if (project.downloadUrl) {
+                downloadBtn.href = project.downloadUrl;
+                downloadBtn.setAttribute('download', project.downloadUrl.split('/').pop() || 'download');
+                downloadBtn.style.display = 'inline-block';
+            } else {
+                downloadBtn.style.display = 'none';
             }
         }
 
