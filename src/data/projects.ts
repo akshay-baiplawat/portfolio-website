@@ -19,6 +19,10 @@ import portfolio8 from '../../assets/images/portfolio-8.webp';
 import portfolio10 from '../../assets/images/portfolio-10.webp';
 import portfolio11 from '../../assets/images/portfolio-11.webp';
 import duckHunt from '../../assets/images/duck-hunt.png';
+import coreAI1 from '../../assets/images/CoreAI1.png';
+import coreAI2 from '../../assets/images/CoreAI2.png';
+import coreAI3 from '../../assets/images/CoreAI3.png';
+import coreAI4 from '../../assets/images/CoreAI4.png';
 
 export interface ProjectData {
     id: string;
@@ -119,6 +123,47 @@ export const projects: ProjectData[] = [
         linkedinUrl: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7372653576822669312',
         linkedinEmbedUrl:
             'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7372653576822669312'
+    },
+    {
+        id: 'core-ai',
+        title: 'Core AI: On-Device LLM Inference Platform',
+        category: 'filter-development',
+        categoryLabel: 'Android Platform',
+        date: '2025',
+        client: 'Personal Project',
+        mainImage: coreAI1,
+        galleryImages: [coreAI1, coreAI2, coreAI3, coreAI4],
+        technologies: [
+            'Android',
+            'AIDL',
+            'Kotlin',
+            'C++',
+            'LiteRT',
+            'llama.cpp',
+            'JNI',
+            'MediaPipe',
+            'GGUF',
+            'Concurrency'
+        ],
+        description:
+            'Multi-tenant on-device LLM inference platform with zero cloud dependency, enabling third-party apps to run sub-second inference via AIDL cross-process communication.',
+        overview:
+            'Architected a multi-tenant on-device LLM inference platform using a custom AIDL service contract for cross-process communication, enabling third-party applications to execute sub-second inference with zero cloud dependency.',
+        challenge:
+            'Designing a production-grade on-device inference platform that supports multiple concurrent client applications, heterogeneous ML backends (GPU, CPU, JNI), and diverse model families (Llama, Gemma, Mistral) while preventing data races and minimizing Time-to-First-Token.',
+        solution:
+            'Engineered a pluggable ML backend utilizing LiteRT (GPU), llama.cpp (JNI), and MediaPipe to support GGUF/LiteRT models, optimizing template resolution by 99% through zero-copy metadata parsing O(H). Designed a three-tier concurrency model using Binary CAS Mutexes and single-threaded JNI dispatchers to prevent data races across N concurrent client applications.',
+        features: [
+            'Custom AIDL service contract for cross-process IPC',
+            'Pluggable ML backend: LiteRT (GPU), llama.cpp (JNI), MediaPipe',
+            'GGUF and LiteRT model format support',
+            '4-tier chat template resolver for Llama, Gemma, and Mistral',
+            'One-way AIDL callback streaming for optimized TTFT',
+            '99% template resolution speedup via zero-copy O(H) metadata parsing',
+            'Three-tier concurrency model with Binary CAS Mutexes',
+            'Zero cloud dependency for complete on-device inference'
+        ],
+        githubUrl: 'https://github.com/akshay-baiplawat/Core-Ai'
     },
     {
         id: 'portfolio-website',
